@@ -1,0 +1,29 @@
+.hide{
+  animation: slideup 2s;
+  -moz-animation: slideup 2s;
+  -webkit-animation: slideup 2s;
+  -o-animation: slideup 2s;
+}
+@keyframes slideup {
+  0% {top: 0px;}
+  75% {top: 0px;}
+  100% {top: -20px;}
+}
+
+@-moz-keyframes slideup {
+  0% {top: 0px;}
+  75% {top: 0px;}
+  100% {top: -20px;}
+}
+
+@-webkit-keyframes slideup {
+  0% {top: 0px;}
+  75% {top: 0px;}
+  100% {top: -20px;}
+}
+
+@-o-keyframes slideup {
+  0% {top: 0px;}
+  75% {top: 0px;}
+  100% {top: -20px;}
+}
