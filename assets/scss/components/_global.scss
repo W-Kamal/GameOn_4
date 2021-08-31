@@ -1,0 +1,46 @@
+html {
+  box-sizing: border-box;
+  font-family: $font-default;
+  font-size: 1rem;
+  font-weight: 300;
+  scroll-behavior: smooth;
+}
+
+p {
+  margin-bottom: 0;
+  padding: 0.5vw;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+a {
+  color: $clr-primary;
+  text-decoration: none;
+
+  &:hover {
+    color: $clr-primary;
+  }
+}
+
+abbr {
+  padding: 0 0.125rem;
+  &[title] {
+    text-decoration: none;
+  }
+}
+
+
+fieldset {
+  padding: 0;
+  border: none;
+}

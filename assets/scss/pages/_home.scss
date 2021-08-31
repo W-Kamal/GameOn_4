@@ -1,21 +1,13 @@
 /* Landing Page */
-
-body {
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  /* background-image: url("background.png"); (Image manquante et absence sur la maquette)*/
-  font-family: var(--font-default);
-  font-size: $txt-size;
-  max-width: 1300px;
+.main-container {
+  max-width: map-get($breakpoint-up, xlarge);
   margin: 0 auto;
+  padding: 0 2.5rem;
 }
 
-p {
-  margin-bottom: 0;
-  padding: 0.5vw;
-}
-
-img {
-  padding-right: 1rem;
-}
+//   @media screen and (max-width: map-get($breakpoint-up, xlarge)) {
+//     max-width: map-get($breakpoint-up, xlarge);
+//     margin: 0 auto;
+//     padding: 0 1.5rem;
+//   }
+// }

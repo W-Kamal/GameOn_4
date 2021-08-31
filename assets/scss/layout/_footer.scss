@@ -1,7 +1,7 @@
 .footer {
   margin: 1.1rem;
   padding: 0.55rem;
-  font-family: var(--font-slab);
+  font-family: $font-default;
 }
 
 footer {
@@ -10,7 +10,7 @@ footer {
   margin: 0 1.1rem;
 }
 .copyrights {
-  color: #fe142f;
+  color: $clr-primary;
   padding: 0;
   font-size: 1rem;
   margin: 60px 0 1.66rem;

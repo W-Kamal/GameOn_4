@@ -1,5 +1,4 @@
-
-.modal-bg {
+.modal-container {
   transform: translateY(-100vh);
   position: fixed;
   z-index: 1;
@@ -9,24 +8,23 @@
   width: 100%;
   overflow: auto;
 }
-/* Pour open la modal */
+/* Open modal */
 .is-open{
-  animation: modalopen var(--modal-duration) forwards, bground var(--modal-duration) 450ms forwards;
+  animation: modalopen $modal-duration forwards, bground $modal-duration 450ms forwards;
 }
-/* Pour close la modal */
+/* Close modal */
 .is-close{  
-  animation: modalclose var(--modal-duration);
+  animation: modalclose $modal-duration;
 }
-
 .modal-view {
   max-width: 70vw;
   margin: 5% auto;
   width: 100%;
-  background: #232323;
+  background: $clr-primary-bg ;
   border-radius: 0.55rem;
   overflow: hidden;
   position: relative;
-  color: #fff;
+  color: $clr-secondary;
   padding-top: 0.55rem;
 }
 @media screen and (max-width: 800px) {
@@ -34,10 +32,33 @@
     max-width: 85vw;
   }
 }
-.modal-body {
-  padding: 0.83rem 8%;
-  margin: 0.83rem auto;
+.error-border{
+  border: 0.2rem solid $clr-error;
 }
+.error-text{
+  color : $clr-error;
+}
+.modal-body {
+  padding : 0.83rem 8%;
+  margin : 0.83rem auto;
+  display: block;
+  transition: all 1s linear;
+}
+.success-style {
+  padding : 0.83rem 8%;
+}
+.hidden {
+  height: 20vh;
+  display: none;
+}
+.visuallyhidden {
+  opacity: 0;  
+  transition: all 0.5s linear;
+}
+/*.success{
+  
+}
+*/
 fieldset{
   border: none;
 }
@@ -57,14 +78,6 @@ label {
   border-radius: 0.44rem;
   outline: none;
 }
-.error-border{
-  border: 0.2rem solid $error-color;
-}
-.error-text{
-  color : $error-color;
-}
-
-
 ul#checkbox-list {
   margin: 0;
   padding-left: 0;
@@ -91,7 +104,7 @@ ul#checkbox-list {
   display: block;
   width: 1.1rem;
   height: 1.1rem;
-  border: 0.11rem solid #279e7a;
+  border: 0.11rem solid $clr-checkbox;
   border-radius: 50%;
   text-indent: 1.6rem;
   white-space: nowrap;
@@ -105,7 +118,7 @@ ul#checkbox-list {
   content: "";
   width: 13px;
   height: 13px;
-  background-color: #279e7a;
+  background-color: $clr-checkbox;
   border-radius: 50%;
   text-indent: 1.6rem;
   white-space: nowrap;
@@ -124,12 +137,12 @@ ul#checkbox-list {
   opacity: 1;
 }
 .checkbox-input:checked+.checkbox2-label .checkbox-icon {
-  background: #279e7a;
+  background: $clr-checkbox;
 }
 .checkbox2-label .checkbox-icon {
   border-radius: 0.22rem;
   border: 0;
-  background: #c4c4c4;
+  background: $clr-label-font;
 }
 .checkbox2-label .checkbox-icon::after {
   width: 0.44rem;
@@ -137,8 +150,8 @@ ul#checkbox-list {
   border-radius: 0.11rem;
   background: transparent;
   border: 0.11rem solid transparent;
-  border-bottom-color: #fff;
-  border-left-color: #fff;
+  border-bottom-color: $clr-secondary;
+  border-left-color: $clr-secondary;
   transform: rotate(-55deg);
   left: 21%;
   top: 19%;
@@ -165,6 +178,6 @@ ul#checkbox-list {
   from{
     background-color: transparent;    
   } to {    
-    background-color: rgba(26, 39, 156, 0.4);
+    background-color: $clr-modal-container-bg;
   }
 }

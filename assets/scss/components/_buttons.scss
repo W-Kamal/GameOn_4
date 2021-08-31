@@ -1,50 +1,18 @@
 /*---REFACTORISER LES BUTTONS---*/
-
-.btn-signup {
-  outline: none;
-  text-transform: capitalize;
-  padding: 0.83rem 23px;
-  margin: 0;
-  margin-top: 59px;
-}
-.btn-submit,
-.btn-signup {
-  background: #fe142f;
-  display: block;
+.cta {
+  min-width: 12rem;
+  background: $clr-primary;
   margin: 0 auto;
-  padding: 12px 82px;
-  border-radius: 0.44rem;
-  font-size: 1.6rem;
-  color: #fff;
+  padding: .75rem 1.5rem;
+  border: none;
+  color: $clr-secondary;
+  border-radius: 0.5rem;
   cursor: pointer;
-  border: 0;
-}
-.button {
-  background: #fe142f;
-  margin-top: 0.5rem;
-  padding: 1rem;
-  color: #fff;
-  border-radius: 0.83rem;
-  cursor: pointer;
-  font-size: 1.6rem;
-}
-
-.button:hover {
-  background: #3876ac;
-}
-.modal-btn {
   font-size: 1.3rem;
-  background: #fe142f;
-  display: flex;
-  margin: auto;
-  padding: 2em;
-  color: #fff;
-  padding: 0.75rem 2.5rem;
-  border-radius: 1rem;
-  cursor: pointer;
 }
-.modal-btn:hover {
-  background: #3876ac;
+.cta:hover {
+  transition: background-color 300ms;
+  background: $clr-hover-btn-bg;
 }
 
 /* How to build the cross which close modal */
@@ -55,7 +23,7 @@
   content: " ";
   height: 33px;
   width: 3px;
-  background-color: #fff;
+  background-color: $clr-secondary;
 }
 .close-btn:before {
   transform: rotate(45deg);

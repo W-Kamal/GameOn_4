@@ -7,6 +7,8 @@ import {
   cityValidation,
   cguValidation,
   formIsValid,
+  displaySuccess,
+  removeForm
 } from './functions.js';
 
 /** CONTROL AND VALIDATION MODULE **/
@@ -20,8 +22,8 @@ const emailAddrErrorField = document.getElementById('emailErrorField');
 const birthday = document.getElementById('birthday');
 const birthdayErrorField = document.getElementById('birthdayErrorField');
 
-const nbTounament = document.getElementById('nbTournament');
-const nbTounamentErrorField = document.getElementById('nbTournamentErrorField');
+const nbTournament = document.getElementById('nbTournament');
+const nbTournamentErrorField = document.getElementById('nbTournamentErrorField');
 //controle sur les checkbox-radio
 const cityErrorField = document.getElementById('locationErrorField');
 
@@ -39,14 +41,12 @@ firstName.oninput = () => {
 firstName.addEventListener ('blur', () => {
   firstNameValidation(firstName, firstNameErrorField);
 });
-
 lastName.oninput = () => {
   lastNameValidation(lastName, lastNameErrorField)
 };
 lastName.addEventListener('blur', () => {
   lastNameValidation (lastName, lastNameErrorField);
 });
-
 emailAddr.oninput = () => {
   emailValidation(emailAddr, emailAddrErrorField)
 };
@@ -59,50 +59,68 @@ birthday.oninput = () => {
 birthday.addEventListener('blur', () => {
   birthdayValidation (birthday, birthdayErrorField);
 });
-
-nbTounament.oninput = () => {
-  tournamentValidation(nbTounament, nbTounamentErrorField)
+nbTournament.oninput = () => {
+  tournamentValidation(nbTournament, nbTournamentErrorField)
 };
-nbTounament.addEventListener('blur', () => {
-  tournamentValidation (nbTounament, nbTounamentErrorField);
+nbTournament.addEventListener('blur', () => {
+  tournamentValidation (nbTournament, nbTournamentErrorField);
 });
-
 cgu.onchange = () => {
   cguValidation(cgu, cguErrorField)
 };
 
+/* ==================== */
+/*  Remove à exporter   */
+/* ==================== */
+const removeErrors = () => {
+  const errorFieldsList = [
+    firstNameErrorField,
+    lastNameErrorField,
+    emailAddrErrorField,
+    birthdayErrorField,
+    nbTournamentErrorField,
+    cityErrorField,
+    cguErrorField,
+  ];
+  const inputFields = document.querySelectorAll("input");
+
+  for (const errorField of errorFieldsList) {
+    errorField.textContent = "";
+    errorField.classList.remove("error-txt");
+  }
+  for (let inputField of inputFields) {
+    inputField.classList.remove("error-border");
+  }
+};
 
 /* ==================== */
 /*   CHECK ON SUBMIT    */
 /* ==================== */
 
 const form = document.getElementById('registration-form');
-
 form.addEventListener('submit', (e) => {
   e.preventDefault();
+
+  removeErrors();
 
   firstNameValidation(firstName, firstNameErrorField);
   lastNameValidation(lastName, lastNameErrorField);
   emailValidation(emailAddr, emailAddrErrorField);
   birthdayValidation(birthday, birthdayErrorField);
-  tournamentValidation(nbTounament, nbTounamentErrorField);
+  tournamentValidation(nbTournament, nbTournamentErrorField);
   cityValidation (cityErrorField);
   cguValidation(cgu, cguErrorField);
 
-  formIsValid();
   
-  //   //removeErrors();
-  // firstNameValidation(firstName, firstNameErrorField);
-  // lastNameValidation(lastName, lastNameErrorField);
-  // emailValidation(emailAddr, emailAddrErrorField);
-  // birthdayValidation(birthday, birthdayErrorField);
-  // tournamentValidation(nbTounament,nbTounamentErrorField);
-  // cityValidation(cityErrorField);
-  // cguValidation(cgu, cguErrorField);
-  
-  // if (formIsValid!==true){
-  //   e.preventDefault()
-  // } else {
-  //   window.alert("success");
-  // }
+    // if(formIsValid()){
+    //   displaySuccess(firstName, lastName);
+     
+    // };
+   removeForm();
 });
+
+
+
+
+
+export {removeErrors};

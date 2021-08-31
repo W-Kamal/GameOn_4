@@ -1,0 +1,33 @@
+/* BREAKPOINTS */
+
+/* ANIMATION */
+$modal-duration: 0.6s;
+
+/* COLORS */
+$clr-primary : hsla(353,99%,54%,1);
+$clr-secondary: hsla(0,0%,100%,1);
+
+$clr-error : hsla(354,100%,65%,1);
+$clr-nav-font : hsla(0,0%,0%,1); 
+$clr-label-font : hsla(0,0%,80%,1);
+$clr-checkbox : hsla(162,60%,39%,1);
+$clr-box-shadow : hsla(0,0%,0%,0.2);
+
+$clr-hover-btn-bg : hsla(208,51%,45%,1);
+$clr-modal-container-bg : hsla(234,71%,36%,0.4);
+$clr-primary-bg : hsla(0,0%,14%,1);
+
+/* BREAKPOINTS */
+//640px,1150px,1400px
+$breakpoint-up:(
+  medium: 40em,
+  large: 71.875em,
+  xlarge: 87.5em
+);
+
+//639px,1149px,1399px
+$breakpoint-down:(
+  small: 39.9375em,
+  medium: 71.8125em,
+  large: 87.4375em
+);

@@ -1,24 +1,29 @@
-/**  Module to manage opening and closing modal events.  */
+import {removeErrors} from './form.js';
+/*  Module to manage opening and closing modal events.  */
 
-const modalBg = document.querySelector(".modal-bg");
+const modalBg = document.querySelector(".modal-container");
 const modalDisplay = document.querySelector(".modal-view");
-const modalBtn = document.querySelectorAll(".modal-btn");
+const modalBtn = document.querySelectorAll(".signup");
 const closeBtn = document.querySelector(".close-btn");
+const form = document.getElementById("registration-form");
 
-/* Opening/Closing modal event */
+function closeModal () {
+  modalBg.classList.remove ('is-open');
+  modalBg.classList.toggle ('is-close');
+  form.reset();
+  removeErrors();
+}
+
+/* Open modal event */
 modalBtn.forEach((btn) => btn.addEventListener("click", function launchModal() {
+  form.classList.remove("visuallyhidden", "hidden");
+  form.reset();
   modalBg.classList.remove ('is-close');
   modalBg.classList.toggle ('is-open');
 }));
+/* Close modal event */
+closeBtn.onclick = closeModal;
 
-
-closeBtn.addEventListener("click", function () {
-  modalBg.classList.remove ('is-open');
-  modalBg.classList.toggle ('is-close');
-});
-/* END Opening/Closing modal event */
-
-
-/* Success Submit event */
-
-/* END Success Submit event */
+// Close modal when clicking outside modal window:
+modalDisplay.onclick = (e) => e.stopPropagation();
+modalBg.onclick = closeModal;
