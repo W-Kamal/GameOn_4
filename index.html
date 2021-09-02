@@ -69,38 +69,37 @@
         <div class="modal-body">
           <form name="registration-form" action="index.html" method="GET" id="registration-form">
             <!-- Inputs-->
-            <fieldset>
-              <div class="formData"><!-- input text firstname -->
-                <label for="firstName">Prénom<br>
+            <fieldset class="form-inputs">
+              <div class="form-item"><!-- input text firstname -->
+                <label class="item-label" for="firstName">Prénom<abbr title="Champ obligatoire"> *</abbr></label><br>                
                 <input class="text-control" type="text" id="firstName" name="firstName"/><br>
-                </label>
                 <p class="error-field" id="firstNameErrorField"></p>
               </div>
-              <div class="formData"><!-- input text lastname -->
-                <label for="lastName">Nom</label><br>
+              <div class="form-item"><!-- input text lastname -->
+                <label class="item-label" for="lastName">Nom<abbr title="Champ obligatoire"> *</abbr></label><br>
                 <input class="text-control" type="text" id="lastName" name="lastName"/><br>
-                <div class="error-field" id="lastNameErrorField"></div>
+                <p class="error-field" id="lastNameErrorField"></p>
               </div>
-              <div class="formData"><!-- input email -->
-                <label for="email">E-mail</label><br>
+              <div class="form-item"><!-- input email -->
+                <label class="item-label" for="email">E-mail<abbr title="Champ obligatoire"> *</abbr></label><br>
                 <input class="text-control" type="email" id="email" name="email"/><br>
                 <div class="error-field" id="emailErrorField"></div>
               </div>
-              <div class="formData"><!-- input date birthday -->
-                <label for="birthDay">Date de naissance</label><br>
+              <div class="form-item"><!-- input date birthday -->
+                <label class="item-label" for="birthDay">Date de naissance<abbr title="Champ obligatoire"> *</abbr></label><br>
                 <input class="text-control" type="date" id="birthday" name="birthDay"/><br>
                 <div class="error-field" id="birthdayErrorField"></div>
               </div>              
-              <div class="formData"><!-- Nombre de tournois -->
-                <label for="nbTournament">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
+              <div class="form-item"><!-- Nombre de tournois -->
+                <label class="item-label" for="nbTournament">À combien de tournois GameOn avez-vous déjà participé ?<abbr title="Champ obligatoire"> *</abbr></label><br>
                 <input type="number" class="text-control" id="nbTournament" name="nbTournament" min="0" max="100">
                 <div class="error-field" id="nbTournamentErrorField"></div>
               </div> 
             </fieldset>
             <!-- Villes btn radio-->
             <fieldset class="location-list">
-                <p class="text-label">Dans quelles villes ?</p>
-              <ul class="formData" id="checkbox-list">
+                <legend class="text-label">Dans quelles villes ?<abbr title="Champ obligatoire"> *</abbr></legend>
+              <ul class="form-item" id="checkbox-list">
                 <li>
                   <input class="checkbox-input" type="radio" id="location1" name="location" value="New York"/>
                   <label class="checkbox-label" for="location1">
@@ -149,16 +148,16 @@
               <div class="error-field" id="locationErrorField"></div>
             </fieldset>
             <!-- Checkbox conditions -->
-            <fieldset>
-              <div class="formData">
+            <fieldset class="cgu-checkbox">
+              <div class="cgu">
                 <input class="checkbox-input" type="checkbox" id="cgu" name="cgu" />
                 <label class="checkbox2-label" for="cgu" required>
-                  <span class="checkbox-icon"></span> J'ai lu et accepté les conditions d'utilisation.
+                  <span class="checkbox-icon"></span> J'ai lu et accepté les conditions d'utilisation.<abbr title="Champ obligatoire"> *</abbr>
                 </label>
                 <br>
                 <div class="error-field" id="cguErrorField"></div>
               </div>
-              <div>
+              <div class="newsletter-checkbox">
                 <input class="checkbox-input" type="checkbox" id="newsletter" name="newsletter"/>
                 <label class="checkbox2-label" for="newsletter">
                   <span class="checkbox-icon"></span>
@@ -166,8 +165,10 @@
                 </label>
                 <br>
               </div>
-            </fieldset>         
-            <input class="cta submit" type="submit" value="C'est parti" />
+            </fieldset>
+            <div class="submit-container">
+              <input class="cta submit" type="submit" value="C'est parti" />
+            </div>           
           </form>
             <!-- Success message -->
           <div class="cta__wrapper hidden" id="success"">

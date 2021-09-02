@@ -24,7 +24,6 @@ const birthdayErrorField = document.getElementById('birthdayErrorField');
 
 const nbTournament = document.getElementById('nbTournament');
 const nbTournamentErrorField = document.getElementById('nbTournamentErrorField');
-//controle sur les checkbox-radio
 const cityErrorField = document.getElementById('locationErrorField');
 
 const cgu = document.getElementById('cgu');
@@ -118,9 +117,5 @@ form.addEventListener('submit', (e) => {
     // };
    removeForm();
 });
-
-
-
-
 
 export {removeErrors};

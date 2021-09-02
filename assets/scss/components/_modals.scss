@@ -17,57 +17,30 @@
   animation: modalclose $modal-duration;
 }
 .modal-view {
-  max-width: 70vw;
+  max-width: 30rem;
   margin: 5% auto;
-  width: 100%;
   background: $clr-primary-bg ;
   border-radius: 0.55rem;
   overflow: hidden;
   position: relative;
   color: $clr-secondary;
-  padding-top: 0.55rem;
+  padding: 2.5rem 2rem 1rem 2rem;
 }
 @media screen and (max-width: 800px) {
   .modal-view {
     max-width: 85vw;
   }
 }
-.error-border{
-  border: 0.2rem solid $clr-error;
-}
-.error-text{
-  color : $clr-error;
-}
 .modal-body {
-  padding : 0.83rem 8%;
-  margin : 0.83rem auto;
   display: block;
   transition: all 1s linear;
 }
-.success-style {
-  padding : 0.83rem 8%;
+.submit-container{
+  display: flex;
 }
-.hidden {
-  height: 20vh;
-  display: none;
-}
-.visuallyhidden {
-  opacity: 0;  
-  transition: all 0.5s linear;
-}
-/*.success{
-  
-}
-*/
-fieldset{
-  border: none;
-}
-label {
-  font-family: var(--font-default);
-  font-size: 0.9rem;
-  font-weight: normal;
-  display: inline-block;
-  margin-bottom: 0.55rem;
+
+label.item-label{
+  margin-bottom: 0.5rem;
 }
 .text-control {
   font-size: 1rem;
@@ -85,12 +58,42 @@ ul#checkbox-list {
 
   & li {
   display:inline;
+  }
 }
-} 
+label.item-label {
+  margin-bottom: 1rem;
+}
 .text-label {
   margin-top: 0;
   font-weight: normal;
   font-size: 0.9rem;
+}
+.success-style {
+  padding : 0.83rem 8%;
+}
+.hidden {
+  height: 20vh;
+  display: none;
+}
+.visuallyhidden {
+  opacity: 0;  
+  transition: all 0.5s linear;
+}
+.error-border{
+  border: 0.2rem solid $clr-error;
+  transition: all 200ms;
+}
+.error-field{
+  height: 1.125rem;
+  margin: .25rem 0 .5rem 0;
+  color : $clr-primary-bg;
+}
+.error-text{
+  color : $clr-error;
+  margin: 0.25rem 0;
+  padding: 0;
+  font-size: small;
+  transition: color 200ms;
 }
 .checkbox-label,
 .checkbox2-label {
