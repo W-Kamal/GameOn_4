@@ -125,12 +125,19 @@ const cguValidation = (inputField, errorField) => {
 
 /** FORM VALIDATION **/
 function allPropertiesAreTrue(object) {
-	for(const prop in object)
+  let res = false;
+	for(const prop in object){
 		if(!object[prop]) { 
-      return false 
+      return false;
     } else {
-      return true
-    };
+      res = true;
+    };  
+  }
+  if (res) {
+    return true;
+  } else {
+    return false;
+  }
 }
 function formIsValid() {
 	if (!allPropertiesAreTrue(fieldValidStatus)) {

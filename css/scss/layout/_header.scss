@@ -33,9 +33,6 @@
 }
 // .main-nav {
 // }
-#hamburger{
-  display: none;
-}
 
 // Main section
 .hero{
@@ -58,7 +55,7 @@
 }
 .hero__img {
   min-height: 100%;
-  margin-left: calc((100% / 12) * 5 - 0.01px);
+  width: calc((100% / 12) * 7 - 0.01px);
 }
 
 .hero__heading {

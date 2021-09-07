@@ -20,16 +20,16 @@ abbr[title] {
 
 /* MAIN PAGE SECTION */
 //Header
-.nav-link {
+.nav__link {
   color: $clr-nav-font ;
 }
-li:hover a.nav-link {
+li:hover a.nav__link {
     color: $clr-secondary;
     text-decoration: underline;
 }
 // Hero
 .hero__heading {
-  font-size: 6.5vw;
+  font-size: 5.5rem;
   font-weight: 600;
 }
 .hero__text {
@@ -40,6 +40,10 @@ li:hover a.nav-link {
 .hero__text {
   z-index: 1;
   color: $clr-secondary;
+}
+// Footer
+.footer {
+  font-family: $font-default;
 }
 
 /* MODAL SECTION */
