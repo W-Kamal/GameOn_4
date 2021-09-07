@@ -19,17 +19,21 @@ const lastName = document.getElementById('lastName');
 const lastNameErrorField = document.getElementById('lastNameErrorField');
 const emailAddr = document.getElementById('email');
 const emailAddrErrorField = document.getElementById('emailErrorField');
+
 const birthday = document.getElementById('birthday');
 const birthdayErrorField = document.getElementById('birthdayErrorField');
 
 const nbTournament = document.getElementById('nbTournament');
 const nbTournamentErrorField = document.getElementById('nbTournamentErrorField');
+
+const city = document.querySelectorAll('input[name="location"]');
 const cityErrorField = document.getElementById('locationErrorField');
 
 const cgu = document.getElementById('cgu');
 const cguErrorField = document.getElementById('cguErrorField');
+
 const newsletter = document.getElementById('newsletter');
-const success = document.getElementById('success');
+const success = document.getElementById('success-wrapper');
 
 /* ==================== */
 /*   CHECK ON THE GO    */
@@ -64,6 +68,11 @@ nbTournament.oninput = () => {
 nbTournament.addEventListener('blur', () => {
   tournamentValidation (nbTournament, nbTournamentErrorField);
 });
+city.forEach((btn) =>
+  btn.addEventListener("change", () => {
+    cityValidation (cityErrorField)
+  })
+);
 cgu.onchange = () => {
   cguValidation(cgu, cguErrorField)
 };
@@ -97,10 +106,10 @@ const removeErrors = () => {
 /* ==================== */
 
 const form = document.getElementById('registration-form');
+
 form.addEventListener('submit', (e) => {
   e.preventDefault();
 
-  removeErrors();
 
   firstNameValidation(firstName, firstNameErrorField);
   lastNameValidation(lastName, lastNameErrorField);
@@ -109,13 +118,12 @@ form.addEventListener('submit', (e) => {
   tournamentValidation(nbTournament, nbTournamentErrorField);
   cityValidation (cityErrorField);
   cguValidation(cgu, cguErrorField);
-
   
-    // if(formIsValid()){
-    //   displaySuccess(firstName, lastName);
-     
-    // };
-   removeForm();
+  if(formIsValid()) {
+    console.log("Validation finale OK")
+    displaySuccess(firstName, lastName); 
+    removeForm();    
+  };
 });
 
 export {removeErrors};

@@ -1,3 +1,13 @@
+// Open modal
+.is-open{
+  animation: modalopen $modal-duration forwards, bground $modal-duration 450ms forwards;
+}
+// Close modal
+.is-close{  
+  animation: modalclose $modal-duration;
+}
+
+// how modal globaly look
 .modal-container {
   transform: translateY(-100vh);
   position: fixed;
@@ -8,99 +18,51 @@
   width: 100%;
   overflow: auto;
 }
-/* Open modal */
-.is-open{
-  animation: modalopen $modal-duration forwards, bground $modal-duration 450ms forwards;
-}
-/* Close modal */
-.is-close{  
-  animation: modalclose $modal-duration;
-}
 .modal-view {
-  max-width: 30rem;
+  max-width: 32rem;
   margin: 5% auto;
   background: $clr-primary-bg ;
   border-radius: 0.55rem;
   overflow: hidden;
-  position: relative;
-  color: $clr-secondary;
-  padding: 2.5rem 2rem 1rem 2rem;
-}
-@media screen and (max-width: 800px) {
-  .modal-view {
-    max-width: 85vw;
-  }
+  position: relative;  
+  padding: 2.5rem 2rem 1rem 2rem;  
 }
 .modal-body {
   display: block;
   transition: all 1s linear;
 }
-.submit-container{
-  display: flex;
-}
 
-label.item-label{
-  margin-bottom: 0.5rem;
-}
+// how inputs look
 .text-control {
-  font-size: 1rem;
-  //padding: 0.44rem;
   width: 100%;
   height: 2.6rem;
+  margin-top: 0.25rem;
+  padding: 0.5rem;
   border: 0.044rem solid #ccc;
   border-radius: 0.44rem;
   outline: none;
 }
-ul#checkbox-list {
-  margin: 0;
+
+//location checkbox list look
+.text-label {
+  margin: 0 0 0.5rem 0;
+}
+ul.location-item-list {  
   padding-left: 0;
   list-style: none;
+  display: flex;
+  flex-wrap: wrap;
 
   & li {
   display:inline;
+  margin: 0.2rem;
   }
 }
-label.item-label {
-  margin-bottom: 1rem;
-}
-.text-label {
-  margin-top: 0;
-  font-weight: normal;
-  font-size: 0.9rem;
-}
-.success-style {
-  padding : 0.83rem 8%;
-}
-.hidden {
-  height: 20vh;
-  display: none;
-}
-.visuallyhidden {
-  opacity: 0;  
-  transition: all 0.5s linear;
-}
-.error-border{
-  border: 0.2rem solid $clr-error;
-  transition: all 200ms;
-}
-.error-field{
-  height: 1.125rem;
-  margin: .25rem 0 .5rem 0;
-  color : $clr-primary-bg;
-}
-.error-text{
-  color : $clr-error;
-  margin: 0.25rem 0;
-  padding: 0;
-  font-size: small;
-  transition: color 200ms;
-}
+
 .checkbox-label,
 .checkbox2-label {
   position: relative;
   margin-left: 2rem;
-  font-size: 1rem;
-  font-weight: normal;
 }
 .checkbox-label .checkbox-icon,
 .checkbox2-label .checkbox-icon {
@@ -109,8 +71,6 @@ label.item-label {
   height: 1.1rem;
   border: 0.11rem solid $clr-checkbox;
   border-radius: 50%;
-  text-indent: 1.6rem;
-  white-space: nowrap;
   position: absolute;
   left: -1.66rem;
   top: -1px;
@@ -148,17 +108,49 @@ label.item-label {
   background: $clr-label-font;
 }
 .checkbox2-label .checkbox-icon::after {
-  width: 0.44rem;
-  height: 0.22rem;
+  width: 0.75rem;
+  height: 0.50rem;
   border-radius: 0.11rem;
   background: transparent;
-  border: 0.11rem solid transparent;
+  border: 0.18rem solid transparent;
   border-bottom-color: $clr-secondary;
   border-left-color: $clr-secondary;
   transform: rotate(-55deg);
-  left: 21%;
+  left: 20%;
   top: 19%;
 }
+.cgu-checkbox{
+  margin-bottom: 2rem;
+}
+
+//how error look
+.error-border{
+  border: 0.2rem solid $clr-error;
+  transition: all 200ms;
+}
+.error-field{
+  height: 1.125rem;
+  margin: .25rem 0 .5rem 0;
+  padding: 0;
+  transition: color 200ms;
+}
+//how success look
+.success-wrapper {
+  display: block;
+  padding : 0.83rem 8%;
+}
+.success-msg {
+  margin-bottom: 1rem;
+}
+.hidden {
+  height: 20vh;
+  display: none;
+}
+.visuallyhidden {
+  opacity: 0;  
+  transition: all 0.5s linear;
+}
+
 @keyframes modalopen {
   from {
     opacity: 0;

@@ -1,0 +1,52 @@
+//Laptop = 1024px
+@include breakpoint-down(laptop) {  
+  /* Homepage */
+  .main-container {
+    margin: 0 auto;
+    padding: 0 2.5rem;
+  }
+  .navbar {
+    padding: 2rem 0 3rem 0;
+  }
+  //Header
+  .navbar {
+    padding-bottom: 2rem;
+  }
+  .navbar ul {
+    font-size: 1.2375rem;
+  }
+  //Hero
+  .navbar .logo_img {
+    height: 2.5rem;
+}  
+  .hero__img{
+    margin-left: calc((100% / 12) * 5 - 0.01px);
+    object-position: -60px;
+  }
+  //Footer
+  .copyrights {    
+    margin-top: 50px;
+    text-align: center;
+  }
+
+  /* Modal */
+  .modal-container {
+    padding: 0 1rem;
+    transform: translateY(-200vh);
+  }  
+}
+//tablet = 768px
+// @include breakpoint-down(tablet) {
+  
+// }
+
+//Mobile : l = 425px m = 375px s = 320px
+// @include breakpoint-down(mobile-l) {
+  
+// }
+// @include breakpoint-down(mobile-m) {
+  
+// }
+// @include breakpoint-down(mobile-s) {
+  
+// }

@@ -1,21 +1,29 @@
-/*---REFACTORISER LES BUTTONS---*/
 .cta {
   min-width: 12rem;
   background: $clr-primary;
   margin: 0 auto;
   padding: .75rem 1.5rem;
   border: none;
-  color: $clr-secondary;
   border-radius: 0.5rem;
   cursor: pointer;
-  font-size: 1.3rem;
+
+  &__wrapper{
+    position: absolute;
+    top: 33rem;
+    left: 5rem;  
+  }
+
+  &:hover {
+    transition: background-color 300ms;
+    background: $clr-hover-btn-bg;
+  }
 }
-.cta:hover {
-  transition: background-color 300ms;
-  background: $clr-hover-btn-bg;
+//submit/close modal button placement
+.cta-container {
+  display: flex;
 }
 
-/* How to build the cross which close modal */
+// Cross which close modal
 .close-btn:before,
 .close-btn:after {
   position: absolute;

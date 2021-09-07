@@ -1,8 +1,5 @@
 html {
   box-sizing: border-box;
-  font-family: $font-default;
-  font-size: 1rem;
-  font-weight: 300;
   scroll-behavior: smooth;
 }
 h1, h2, h3, h4, h5, h6, p {
@@ -25,20 +22,8 @@ ul {
   box-sizing: inherit;
 }
 
-a {
-  color: $clr-primary;
-  text-decoration: none;
-
-  &:hover {
-    color: $clr-primary;
-  }
-}
-
 abbr {
   padding: 0 0.125rem;
-  &[title] {
-    text-decoration: none;
-  }
 }
 
 fieldset {

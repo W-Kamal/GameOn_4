@@ -60,13 +60,13 @@ const firstNameValidation = (inputField, errorField) => {
     fieldValidStatus.firstNameIsValid = false;
   }
 };
-const lastNameValidation = (inputField, errorField) => {  
+const lastNameValidation = (inputField, errorField) => {
   if (regNameValidation(inputField.value)) {
     setValidStatus (inputField, errorField);
     fieldValidStatus.lastNameIsValid = true;
   } else {
     setErrorStatus (inputField, errorField, errorMsgList.letters);
-    fieldValidStatus.lastNameIsValid = true;
+    fieldValidStatus.lastNameIsValid = false;
   }
 };
 const emailValidation = (inputField, errorField) => {
@@ -110,6 +110,7 @@ const cityValidation = (errorField) => {
     fieldValidStatus.cityIsValid = false;
   }
 };
+
 const cguValidation = (inputField, errorField) => {
   if(inputField.checked){
     errorField.textContent = "";
@@ -123,24 +124,28 @@ const cguValidation = (inputField, errorField) => {
 };
 
 /** FORM VALIDATION **/
-function formIsValid () {
-  for (const property in fieldValidStatus) {
-    if(fieldValidStatus[property]!==true){
-      console.log('ko');
-      console.log(`${property}: ${fieldValidStatus[property]}`);
-      return false;
+function allPropertiesAreTrue(object) {
+	for(const prop in object)
+		if(!object[prop]) { 
+      return false 
     } else {
-      console.log('ok');
-      console.log(`${property}: ${fieldValidStatus[property]}`);
-      return true;
-    }
-  };
+      return true
+    };
+}
+function formIsValid() {
+	if (!allPropertiesAreTrue(fieldValidStatus)) {
+    console.log("PAS OK") 
+    return false 
+  } else {
+    console.log("C'EST BON")
+    return true;
+	};	
 }
 
-const displaySuccess = (firstNameInputField,lastNameInputField) => {
+const displaySuccess = (firstNameInputField, lastNameInputField) => {
   const modalDisplay = document.querySelector(".modal-view");
   modalDisplay.classList.add(".success-style");
-  const successField = document.getElementById('success');
+  const successField = document.getElementById('success-msg');
   successField.textContent = `Félicitation ${firstNameInputField.value} ${lastNameInputField.value}, votre inscription est enregistrée.`;
 };
 

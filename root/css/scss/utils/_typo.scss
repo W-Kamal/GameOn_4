@@ -1,0 +1,74 @@
+/* FONT PARAMs */
+$font-default: "DM Sans", Arial, Helvetica, sans-serif;
+
+html {
+  font-family: $font-default;
+  font-size: 1rem;
+  font-weight: 300;
+}
+a {
+  color: $clr-primary;
+  text-decoration: none;
+
+  &:hover {
+    color: $clr-primary;
+  }
+}
+abbr[title] {
+  text-decoration: none;
+}
+
+/* MAIN PAGE SECTION */
+//Header
+.nav-link {
+  color: $clr-nav-font ;
+}
+li:hover a.nav-link {
+    color: $clr-secondary;
+    text-decoration: underline;
+}
+// Hero
+.hero__heading {
+  font-size: 6.5vw;
+  font-weight: 600;
+}
+.hero__text {
+  font-size: 1.45vw;
+  line-height: 1.5;
+}
+.hero__heading,
+.hero__text {
+  z-index: 1;
+  color: $clr-secondary;
+}
+
+/* MODAL SECTION */
+.modal-view {
+  color: $clr-secondary;
+}
+.navbar ul {
+  font-size: 1.4vw;
+}
+
+.error-field{
+  color : $clr-primary-bg;
+  font-size: small;
+}
+.error-text{
+  color : $clr-error;
+}
+// Radio btn
+.checkbox-label,
+.checkbox2-label {
+  font-size: 1rem;
+}
+.checkbox-label .checkbox-icon,
+.checkbox2-label .checkbox-icon {
+  text-indent: 1.6rem;
+  white-space: nowrap;
+}
+// Buttons
+.cta {
+  color: $clr-secondary;
+  font-size: 1.3rem;
+}

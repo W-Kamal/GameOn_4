@@ -6,25 +6,25 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     
     <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
-    <link rel="shortcut icon" type="image/png" href="/ico.svg"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="shortcut icon" type="image/png" href="ico.svg"/>
     
     <!-- Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com/css?family=DM+Sans"  />
+    <link rel="preconnect" href="https://fonts.googleapis.com/css?family=DM+Sans" />
     
     <!-- Scripts CSS/JS -->
-    <link rel="stylesheet" href="./assets/css/main.css" />
-    <script type="module" src="./assets/js/main.js"></script>
+    <link rel="stylesheet" href="/css/main.css" />
+    <script type="module" src="/scripts/js/main.js"></script>
 
   </head>
   <body>
     <div class="main-container">
       <header class="navbar">
         <div class="header-logo">
-          <img alt="GameOn logo" src="./assets/img/Logo.png"/>
+          <img class="logo_img" alt="GameOn logo" src="./src/img/Logo.png"/>
         </div>
         <nav class="main-nav">
-          <ul>
+          <ul class="nav-list">
             <li>
               <a href="#" class="nav-link"><span>Détails de l'évènement</span></a>
             </li>
@@ -49,11 +49,7 @@
             <p class="hero__text">
               Vous aimez jouer ? Notre prochain évènement gaming est ouvert aux réservations... Places limitées !
             </p>
-            <img 
-              class="hero__img" 
-              src="./assets/img/bg_img.jpg" 
-              alt="Une gameuse victorieuse devant son écran" 
-            />
+            <img class="hero__img" src="./src/img/bg_img.jpg" alt="Une gameuse victorieuse devant son écran" />
             <div class="cta__wrapper">
               <button class="cta signup"> Je m'inscris </button>
             </div>
@@ -67,41 +63,41 @@
       <div class="modal-view">
         <span class="close-btn"></span>
         <div class="modal-body">
-          <form name="registration-form" action="index.html" method="GET" id="registration-form">
+          <form name="registration-form" action="index.html" method="POST" id="registration-form">
             <!-- Inputs-->
             <fieldset class="form-inputs">
               <div class="form-item"><!-- input text firstname -->
                 <label class="item-label" for="firstName">Prénom<abbr title="Champ obligatoire"> *</abbr></label><br>                
-                <input class="text-control" type="text" id="firstName" name="firstName"/><br>
+                <input class="text-control" type="text" id="firstName" name="firstName" value="te"/><br>
                 <p class="error-field" id="firstNameErrorField"></p>
               </div>
               <div class="form-item"><!-- input text lastname -->
                 <label class="item-label" for="lastName">Nom<abbr title="Champ obligatoire"> *</abbr></label><br>
-                <input class="text-control" type="text" id="lastName" name="lastName"/><br>
+                <input class="text-control" type="text" id="lastName" name="lastName" value="te"/><br>
                 <p class="error-field" id="lastNameErrorField"></p>
               </div>
               <div class="form-item"><!-- input email -->
                 <label class="item-label" for="email">E-mail<abbr title="Champ obligatoire"> *</abbr></label><br>
-                <input class="text-control" type="email" id="email" name="email"/><br>
-                <div class="error-field" id="emailErrorField"></div>
+                <input class="text-control" type="email" id="email" name="email" value="test@fr.fr"/><br>
+                <p class="error-field" id="emailErrorField"></p>
               </div>
               <div class="form-item"><!-- input date birthday -->
-                <label class="item-label" for="birthDay">Date de naissance<abbr title="Champ obligatoire"> *</abbr></label><br>
-                <input class="text-control" type="date" id="birthday" name="birthDay"/><br>
-                <div class="error-field" id="birthdayErrorField"></div>
+                <label class="item-label" for="birthday">Date de naissance<abbr title="Champ obligatoire"> *</abbr></label><br>
+                <input class="text-control" type="date" id="birthday" name="birthday" value="2000-12-12"/><br>
+                <p class="error-field" id="birthdayErrorField"></p>
               </div>              
               <div class="form-item"><!-- Nombre de tournois -->
                 <label class="item-label" for="nbTournament">À combien de tournois GameOn avez-vous déjà participé ?<abbr title="Champ obligatoire"> *</abbr></label><br>
-                <input type="number" class="text-control" id="nbTournament" name="nbTournament" min="0" max="100">
-                <div class="error-field" id="nbTournamentErrorField"></div>
+                <input type="number" class="text-control" id="nbTournament" name="nbTournament" min="0" max="100" value="2">
+                <p class="error-field" id="nbTournamentErrorField"></p>
               </div> 
             </fieldset>
             <!-- Villes btn radio-->
             <fieldset class="location-list">
                 <legend class="text-label">Dans quelles villes ?<abbr title="Champ obligatoire"> *</abbr></legend>
-              <ul class="form-item" id="checkbox-list">
+              <ul class="location-item-list" id="checkbox-list">
                 <li>
-                  <input class="checkbox-input" type="radio" id="location1" name="location" value="New York"/>
+                  <input class="checkbox-input" type="radio" id="location1" name="location" value="New York" checked/>
                   <label class="checkbox-label" for="location1">
                     <span class="checkbox-icon"></span>
                     New York
@@ -150,12 +146,12 @@
             <!-- Checkbox conditions -->
             <fieldset class="cgu-checkbox">
               <div class="cgu">
-                <input class="checkbox-input" type="checkbox" id="cgu" name="cgu" />
-                <label class="checkbox2-label" for="cgu" required>
+                <input class="checkbox-input" type="checkbox" id="cgu" name="cgu" checked/>
+                <label class="checkbox2-label" for="cgu">
                   <span class="checkbox-icon"></span> J'ai lu et accepté les conditions d'utilisation.<abbr title="Champ obligatoire"> *</abbr>
                 </label>
                 <br>
-                <div class="error-field" id="cguErrorField"></div>
+                <p class="error-field" id="cguErrorField"></p>
               </div>
               <div class="newsletter-checkbox">
                 <input class="checkbox-input" type="checkbox" id="newsletter" name="newsletter"/>
@@ -166,14 +162,18 @@
                 <br>
               </div>
             </fieldset>
-            <div class="submit-container">
+            <div class="cta-container">
               <input class="cta submit" type="submit" value="C'est parti" />
             </div>           
           </form>
             <!-- Success message -->
-          <div class="cta__wrapper hidden" id="success"">
-            <button class="cta close-form"> Fermer </button>
-          </div>
+          <div class="success-wrapper" id="success-wrapper">
+            <p class="success-msg" id="success-msg"></p>
+            <div class="cta-container">
+              <button class="cta close-form"> Fermer </button>
+            </div>
+          </div>  
+          
         </div>
       </div>
     </div>         

@@ -1,27 +1,3 @@
-/* TYPO */
-/* BREAKPOINTS */
-/* ANIMATION */
-/* COLORS */
-/* BREAKPOINTS */
-.hide {
-  animation: slideup 2s;
-  -moz-animation: slideup 2s;
-  -webkit-animation: slideup 2s;
-  -o-animation: slideup 2s;
-}
-
-@keyframes slideup {
-  0% {
-    top: 0px;
-  }
-  75% {
-    top: 0px;
-  }
-  100% {
-    top: -20px;
-  }
-}
-
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -361,17 +337,122 @@ template {
   display: none;
 }
 
-/*---REFACTORISER LES BUTTONS---*/
+/* ANIMATION */
+/* COLORS */
+/* BREAKPOINTS */
+.hide {
+  animation: slideup 2s;
+  -moz-animation: slideup 2s;
+  -webkit-animation: slideup 2s;
+  -o-animation: slideup 2s;
+}
+
+@keyframes slideup {
+  0% {
+    top: 0px;
+  }
+  75% {
+    top: 0px;
+  }
+  100% {
+    top: -20px;
+  }
+}
+
+/* FONT PARAMs */
+html {
+  font-family: "DM Sans", Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+a {
+  color: #fe1631;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #fe1631;
+}
+
+abbr[title] {
+  text-decoration: none;
+}
+
+/* MAIN PAGE SECTION */
+.nav-link {
+  color: black;
+}
+
+li:hover a.nav-link {
+  color: white;
+  text-decoration: underline;
+}
+
+.hero__heading {
+  font-size: 6.5vw;
+  font-weight: 600;
+}
+
+.hero__text {
+  font-size: 1.45vw;
+  line-height: 1.5;
+}
+
+.hero__heading,
+.hero__text {
+  z-index: 1;
+  color: white;
+}
+
+/* MODAL SECTION */
+.modal-view {
+  color: white;
+}
+
+.navbar ul {
+  font-size: 1.4vw;
+}
+
+.error-field {
+  color: #242424;
+  font-size: small;
+}
+
+.error-text {
+  color: #ff4d5e;
+}
+
+.checkbox-label,
+.checkbox2-label {
+  font-size: 1rem;
+}
+
+.checkbox-label .checkbox-icon,
+.checkbox2-label .checkbox-icon {
+  text-indent: 1.6rem;
+  white-space: nowrap;
+}
+
+.cta {
+  color: white;
+  font-size: 1.3rem;
+}
+
 .cta {
   min-width: 12rem;
   background: #fe1631;
   margin: 0 auto;
   padding: .75rem 1.5rem;
   border: none;
-  color: white;
   border-radius: 0.5rem;
   cursor: pointer;
-  font-size: 1.3rem;
+}
+
+.cta__wrapper {
+  position: absolute;
+  top: 33rem;
+  left: 5rem;
 }
 
 .cta:hover {
@@ -379,7 +460,10 @@ template {
   background: #3877ad;
 }
 
-/* How to build the cross which close modal */
+.cta-container {
+  display: flex;
+}
+
 .close-btn:before,
 .close-btn:after {
   position: absolute;
@@ -411,9 +495,6 @@ template {
 
 html {
   box-sizing: border-box;
-  font-family: "DM Sans", Arial, Helvetica, sans-serif;
-  font-size: 1rem;
-  font-weight: 300;
   scroll-behavior: smooth;
 }
 
@@ -438,26 +519,21 @@ ul {
   box-sizing: inherit;
 }
 
-a {
-  color: #fe1631;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #fe1631;
-}
-
 abbr {
   padding: 0 0.125rem;
-}
-
-abbr[title] {
-  text-decoration: none;
 }
 
 fieldset {
   padding: 0;
   border: none;
+}
+
+.is-open {
+  animation: modalopen 0.6s forwards, bground 0.6s 450ms forwards;
+}
+
+.is-close {
+  animation: modalclose 0.6s;
 }
 
 .modal-container {
@@ -471,31 +547,14 @@ fieldset {
   overflow: auto;
 }
 
-/* Open modal */
-.is-open {
-  animation: modalopen 0.6s forwards, bground 0.6s 450ms forwards;
-}
-
-/* Close modal */
-.is-close {
-  animation: modalclose 0.6s;
-}
-
 .modal-view {
-  max-width: 30rem;
+  max-width: 32rem;
   margin: 5% auto;
   background: #242424;
   border-radius: 0.55rem;
   overflow: hidden;
   position: relative;
-  color: white;
   padding: 2.5rem 2rem 1rem 2rem;
-}
-
-@media screen and (max-width: 800px) {
-  .modal-view {
-    max-width: 85vw;
-  }
 }
 
 .modal-body {
@@ -503,82 +562,36 @@ fieldset {
   transition: all 1s linear;
 }
 
-.submit-container {
-  display: flex;
-}
-
-label.item-label {
-  margin-bottom: 0.5rem;
-}
-
 .text-control {
-  font-size: 1rem;
   width: 100%;
   height: 2.6rem;
+  margin-top: 0.25rem;
+  padding: 0.5rem;
   border: 0.044rem solid #ccc;
   border-radius: 0.44rem;
   outline: none;
 }
 
-ul#checkbox-list {
-  margin: 0;
+.text-label {
+  margin: 0 0 0.5rem 0;
+}
+
+ul.location-item-list {
   padding-left: 0;
   list-style: none;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-ul#checkbox-list li {
+ul.location-item-list li {
   display: inline;
-}
-
-label.item-label {
-  margin-bottom: 1rem;
-}
-
-.text-label {
-  margin-top: 0;
-  font-weight: normal;
-  font-size: 0.9rem;
-}
-
-.success-style {
-  padding: 0.83rem 8%;
-}
-
-.hidden {
-  height: 20vh;
-  display: none;
-}
-
-.visuallyhidden {
-  opacity: 0;
-  transition: all 0.5s linear;
-}
-
-.error-border {
-  border: 0.2rem solid #ff4d5e;
-  transition: all 200ms;
-}
-
-.error-field {
-  height: 1.125rem;
-  margin: .25rem 0 .5rem 0;
-  color: #242424;
-}
-
-.error-text {
-  color: #ff4d5e;
-  margin: 0.25rem 0;
-  padding: 0;
-  font-size: small;
-  transition: color 200ms;
+  margin: 0.2rem;
 }
 
 .checkbox-label,
 .checkbox2-label {
   position: relative;
   margin-left: 2rem;
-  font-size: 1rem;
-  font-weight: normal;
 }
 
 .checkbox-label .checkbox-icon,
@@ -588,8 +601,6 @@ label.item-label {
   height: 1.1rem;
   border: 0.11rem solid #289f7b;
   border-radius: 50%;
-  text-indent: 1.6rem;
-  white-space: nowrap;
   position: absolute;
   left: -1.66rem;
   top: -1px;
@@ -633,16 +644,51 @@ label.item-label {
 }
 
 .checkbox2-label .checkbox-icon::after {
-  width: 0.44rem;
-  height: 0.22rem;
+  width: 0.75rem;
+  height: 0.50rem;
   border-radius: 0.11rem;
   background: transparent;
-  border: 0.11rem solid transparent;
+  border: 0.18rem solid transparent;
   border-bottom-color: white;
   border-left-color: white;
   transform: rotate(-55deg);
-  left: 21%;
+  left: 20%;
   top: 19%;
+}
+
+.cgu-checkbox {
+  margin-bottom: 2rem;
+}
+
+.error-border {
+  border: 0.2rem solid #ff4d5e;
+  transition: all 200ms;
+}
+
+.error-field {
+  height: 1.125rem;
+  margin: .25rem 0 .5rem 0;
+  padding: 0;
+  transition: color 200ms;
+}
+
+.success-wrapper {
+  display: block;
+  padding: 0.83rem 8%;
+}
+
+.success-msg {
+  margin-bottom: 1rem;
+}
+
+.hidden {
+  height: 20vh;
+  display: none;
+}
+
+.visuallyhidden {
+  opacity: 0;
+  transition: all 0.5s linear;
 }
 
 @keyframes modalopen {
@@ -696,13 +742,6 @@ footer {
   font-weight: 600;
 }
 
-@media screen and (max-width: 800px) {
-  .copyrights {
-    margin-top: 50px;
-    text-align: center;
-  }
-}
-
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -719,10 +758,6 @@ footer {
 
 .navbar ul {
   display: flex;
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-  font-size: 1.3rem;
 }
 
 .navbar li {
@@ -731,18 +766,9 @@ footer {
   border-radius: 0.5rem;
 }
 
-.navbar li a.nav-link {
-  color: black;
-}
-
 .navbar li:hover {
   background: #fe1631;
   transition: background-color 300ms;
-}
-
-.navbar li:hover a.nav-link {
-  color: white;
-  text-decoration: underline;
 }
 
 .header-logo {
@@ -755,7 +781,7 @@ footer {
 
 .hero {
   position: relative;
-  padding: 0 5rem;
+  padding: 0;
 }
 
 .hero__heading, .hero__text, .hero__img {
@@ -773,52 +799,24 @@ footer {
 
 .hero__img {
   min-height: 100%;
-}
-
-@media (min-width: 71.875em) {
-  .hero__img {
-    width: calc((100% / 12) * 7 - 0.01px);
-    margin-left: calc((100% / 12) * 5 - 0.01px);
-  }
+  margin-left: calc((100% / 12) * 5 - 0.01px);
 }
 
 .hero__heading {
   top: 4rem;
   padding: 0 5rem;
-  font-size: 5.5rem;
-  font-weight: 600;
+  width: calc((100% / 12) * 10 - 0.01px);
 }
 
 .hero__text {
   top: 20rem;
-  margin: 0.5rem 0;
+  width: calc((100% / 12) * 5 - 0.01px);
   padding: 0 2rem 0 5rem;
-  font-size: 1.36125rem;
-  line-height: 1.5;
-}
-
-@media (min-width: 71.875em) {
-  .hero__text {
-    width: calc((100% / 12) * 5 - 0.01px);
-  }
 }
 
 .hero__heading,
 .hero__text {
   z-index: 1;
-  color: white;
-}
-
-.cta__wrapper {
-  position: absolute;
-  top: 33rem;
-  left: 5rem;
-}
-
-@media (min-width: 71.875em) {
-  .cta__wrapper {
-    width: calc((100% / 12) * 5 - 0.01px);
-  }
 }
 
 /* Landing Page */
@@ -827,4 +825,36 @@ footer {
   margin: 0 auto;
   padding: 0 2.5rem;
 }
-/*# sourceMappingURL=main.css.map */
+
+@media screen and (max-width: 1024px) {
+  /* Homepage */
+  .main-container {
+    margin: 0 auto;
+    padding: 0 2.5rem;
+  }
+  .navbar {
+    padding: 2rem 0 3rem 0;
+  }
+  .navbar {
+    padding-bottom: 2rem;
+  }
+  .navbar ul {
+    font-size: 1.2375rem;
+  }
+  .navbar .logo_img {
+    height: 2.5rem;
+  }
+  .hero__img {
+    margin-left: calc((100% / 12) * 5 - 0.01px);
+    object-position: -60px;
+  }
+  .copyrights {
+    margin-top: 50px;
+    text-align: center;
+  }
+  /* Modal */
+  .modal-container {
+    padding: 0 1rem;
+    transform: translateY(-200vh);
+  }
+}
