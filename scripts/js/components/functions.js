@@ -22,14 +22,14 @@ cguIsValid: false,
 /** UTILITY FUNCTIONS **/
 
 function setValidStatus (inputField, errorField){
-  inputField.classList.remove("error-border");
+  inputField.classList.remove("error__border");
   errorField.textContent = "";
-  errorField.classList.remove("error-text");
+  errorField.classList.remove("error__text");
 }
 function setErrorStatus (inputField, errorField, errorMsg){
-  inputField.classList.add("error-border");
+  inputField.classList.add("error__border");
   errorField.textContent = errorMsg;
-  errorField.classList.add("error-text");
+  errorField.classList.add("error__text");
 }
 const regNameValidation = (name) => {
   const regexName =/^[a-zA-Z]+[a-zA-Z -]*[a-zA-Z]$/;
@@ -102,11 +102,11 @@ const cityValidation = (errorField) => {
   const city = document.querySelector('input[name="location"]:checked');
   if(city!==null){
     errorField.textContent = "";
-    errorField.classList.remove("error-text");
+    errorField.classList.remove("error__text");
     fieldValidStatus.cityIsValid = true;
   }else{
     errorField.textContent = errorMsgList.location;
-    errorField.classList.add("error-text");
+    errorField.classList.add("error__text");
     fieldValidStatus.cityIsValid = false;
   }
 };
@@ -114,11 +114,11 @@ const cityValidation = (errorField) => {
 const cguValidation = (inputField, errorField) => {
   if(inputField.checked){
     errorField.textContent = "";
-    errorField.classList.remove("error-text");
+    errorField.classList.remove("error__text");
     fieldValidStatus.cguIsValid = true;
   }else{
     errorField.textContent = errorMsgList.cgu;
-    errorField.classList.add("error-text");
+    errorField.classList.add("error__text");
     fieldValidStatus.cguIsValid = false;
   }
 };
@@ -150,9 +150,9 @@ function formIsValid() {
 }
 
 const displaySuccess = (firstNameInputField, lastNameInputField) => {
-  const modalDisplay = document.querySelector(".modal-view");
+  const modalDisplay = document.querySelector(".modal__view");
   modalDisplay.classList.add(".success-style");
-  const successField = document.getElementById('success-msg');
+  const successField = document.getElementById('success__msg');
   successField.textContent = `Félicitation ${firstNameInputField.value} ${lastNameInputField.value}, votre inscription est enregistrée.`;
 };
 

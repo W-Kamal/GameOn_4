@@ -19,13 +19,13 @@
   }
 }
 //submit/close modal button placement
-.cta-container {
+.cta__container {
   display: flex;
 }
 
 // Cross which close modal
-.close-btn:before,
-.close-btn:after {
+.close__btn:before,
+.close__btn:after {
   position: absolute;
   left: 0.83rem;
   content: " ";
@@ -33,13 +33,13 @@
   width: 3px;
   background-color: $clr-secondary;
 }
-.close-btn:before {
+.close__btn:before {
   transform: rotate(45deg);
 }
-.close-btn:after {
+.close__btn:after {
   transform: rotate(-45deg);
 }
-.close-btn {
+.close__btn {
   position: absolute;
   right: 0.83rem;
   top: 0.83rem;

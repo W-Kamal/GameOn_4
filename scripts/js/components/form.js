@@ -33,7 +33,7 @@ const cgu = document.getElementById('cgu');
 const cguErrorField = document.getElementById('cguErrorField');
 
 const newsletter = document.getElementById('newsletter');
-const success = document.getElementById('success-wrapper');
+const success = document.getElementById('success__wrapper');
 
 /* ==================== */
 /*   CHECK ON THE GO    */
@@ -97,7 +97,7 @@ const removeErrors = () => {
     errorField.classList.remove("error-txt");
   }
   for (let inputField of inputFields) {
-    inputField.classList.remove("error-border");
+    inputField.classList.remove("error__border");
   }
 };
 

@@ -1,10 +1,10 @@
 import {removeErrors} from './form.js';
 /*  Module to manage opening and closing modal events.  */
 
-const modalBg = document.querySelector(".modal-container");
-const modalDisplay = document.querySelector(".modal-view");
+const modalBg = document.querySelector(".modal__container ");
+const modalDisplay = document.querySelector(".modal__view");
 const modalBtn = document.querySelectorAll(".signup");
-const closeBtn = document.querySelector(".close-btn");
+const closeBtn = document.querySelector(".close__btn");
 const closemodal = document.querySelector(".close-form");
 const form = document.getElementById("registration-form");
 

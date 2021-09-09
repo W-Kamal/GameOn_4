@@ -18,12 +18,12 @@
 
   </head>
   <body>
-    <div class="main-container">
+    <div class="main__container">
       <header class="navbar">
-        <div class="header-logo">
+        <div class="header__logo">
           <img class="logo_img" alt="GameOn logo" src="./src/img/Logo.png"/>
         </div>
-        <nav class="main-nav">
+        <nav class="main__nav">
           <span class="hamburger"></span>
           <ul class="nav__list">
             <li class="nav__item">
@@ -42,8 +42,8 @@
         </nav>
       </header>
       <main class="hero">
-        <section class="hero-section">
-            <h1 class="hero__heading"> <!-- à modifier (mauvais rendu en mobile) -->
+        <section class="hero__section">
+            <h1 class="hero__heading">
               Marathon national<br> de jeux vidéos
             </h1>
             <p class="hero__text">
@@ -59,117 +59,117 @@
         <p class="copyrights"> Copyright 2014 - 2020, GameOn Inc. </p>
       </footer>
     </div>    
-    <div class="modal-container">
-      <div class="modal-view">
-        <span class="close-btn"></span>
-        <div class="modal-body">
+    <div class="modal__container ">
+      <div class="modal__view">
+        <span class="close__btn"></span>
+        <div class="modal__body">
           <form name="registration-form" action="index.html" method="POST" id="registration-form">
             <!-- Inputs-->
             <fieldset class="form-inputs">
               <div class="form-item"><!-- input text firstname -->
                 <label class="item-label" for="firstName">Prénom<abbr title="Champ obligatoire"> *</abbr></label><br>                
-                <input class="text-control" type="text" id="firstName" name="firstName" value="te"/><br>
-                <p class="error-field" id="firstNameErrorField"></p>
+                <input class="text__control" type="text" id="firstName" name="firstName" value="te"/><br>
+                <p class="error__field" id="firstNameErrorField"></p>
               </div>
               <div class="form-item"><!-- input text lastname -->
                 <label class="item-label" for="lastName">Nom<abbr title="Champ obligatoire"> *</abbr></label><br>
-                <input class="text-control" type="text" id="lastName" name="lastName" value="te"/><br>
-                <p class="error-field" id="lastNameErrorField"></p>
+                <input class="text__control" type="text" id="lastName" name="lastName" value="te"/><br>
+                <p class="error__field" id="lastNameErrorField"></p>
               </div>
               <div class="form-item"><!-- input email -->
                 <label class="item-label" for="email">E-mail<abbr title="Champ obligatoire"> *</abbr></label><br>
-                <input class="text-control" type="email" id="email" name="email" value="test@fr.fr"/><br>
-                <p class="error-field" id="emailErrorField"></p>
+                <input class="text__control" type="email" id="email" name="email" value="test@fr.fr"/><br>
+                <p class="error__field" id="emailErrorField"></p>
               </div>
               <div class="form-item"><!-- input date birthday -->
                 <label class="item-label" for="birthday">Date de naissance<abbr title="Champ obligatoire"> *</abbr></label><br>
-                <input class="text-control" type="date" id="birthday" name="birthday" value="2000-12-12"/><br>
-                <p class="error-field" id="birthdayErrorField"></p>
+                <input class="text__control" type="date" id="birthday" name="birthday" value="2000-12-12"/><br>
+                <p class="error__field" id="birthdayErrorField"></p>
               </div>              
               <div class="form-item"><!-- Nombre de tournois -->
                 <label class="item-label" for="nbTournament">À combien de tournois GameOn avez-vous déjà participé ?<abbr title="Champ obligatoire"> *</abbr></label><br>
-                <input type="number" class="text-control" id="nbTournament" name="nbTournament" min="0" max="100" value="2">
-                <p class="error-field" id="nbTournamentErrorField"></p>
+                <input type="number" class="text__control" id="nbTournament" name="nbTournament" min="0" max="100" value="2">
+                <p class="error__field" id="nbTournamentErrorField"></p>
               </div> 
             </fieldset>
             <!-- Villes btn radio-->
             <fieldset class="location-list">
-                <legend class="text-label">Dans quelles villes ?<abbr title="Champ obligatoire"> *</abbr></legend>
+                <legend class="text__label">Dans quelles villes ?<abbr title="Champ obligatoire"> *</abbr></legend>
               <ul class="location-item-list" id="checkbox-list">
                 <li>
-                  <input class="checkbox-input" type="radio" id="location1" name="location" value="New York" checked/>
-                  <label class="checkbox-label" for="location1">
-                    <span class="checkbox-icon"></span>
+                  <input class="checkbox__input" type="radio" id="location1" name="location" value="New York" checked/>
+                  <label class="checkbox__label" for="location1">
+                    <span class="checkbox__icon"></span>
                     New York
                   </label>
                 </li>
                 <li>
-                  <input class="checkbox-input" type="radio" id="location2" name="location" value="San Francisco"/>
-                  <label class="checkbox-label" for="location2">
-                  <span class="checkbox-icon">
+                  <input class="checkbox__input" type="radio" id="location2" name="location" value="San Francisco"/>
+                  <label class="checkbox__label" for="location2">
+                  <span class="checkbox__icon">
                   </span>
                   San Francisco
                 </label>
                 </li>
                 <li>
-                  <input class="checkbox-input" type="radio" id="location3" name="location" value="Seattle"/>
-                  <label class="checkbox-label" for="location3">
-                    <span class="checkbox-icon"></span>
+                  <input class="checkbox__input" type="radio" id="location3" name="location" value="Seattle"/>
+                  <label class="checkbox__label" for="location3">
+                    <span class="checkbox__icon"></span>
                     Seattle
                   </label>
                 </li>
                 <li>
-                  <input class="checkbox-input" type="radio" id="location4" name="location" value="Chicago"/>
-                <label class="checkbox-label" for="location4">
-                  <span class="checkbox-icon"></span>
+                  <input class="checkbox__input" type="radio" id="location4" name="location" value="Chicago"/>
+                <label class="checkbox__label" for="location4">
+                  <span class="checkbox__icon"></span>
                   Chicago
                 </label>
                 </li>
                 <li>
-                  <input class="checkbox-input" type="radio" id="location5" name="location" value="Boston"/>
-                  <label class="checkbox-label" for="location5">
-                    <span class="checkbox-icon"></span>
+                  <input class="checkbox__input" type="radio" id="location5" name="location" value="Boston"/>
+                  <label class="checkbox__label" for="location5">
+                    <span class="checkbox__icon"></span>
                     Boston
                   </label>
                 </li>
                 <li>
-                  <input class="checkbox-input" type="radio"
+                  <input class="checkbox__input" type="radio"
                   id="location6" name="location" value="Portland"/>
-                  <label class="checkbox-label" for="location6">
-                    <span class="checkbox-icon"></span>
+                  <label class="checkbox__label" for="location6">
+                    <span class="checkbox__icon"></span>
                     Portland
                   </label>
                 </li>
               </ul>
-              <div class="error-field" id="locationErrorField"></div>
+              <div class="error__field" id="locationErrorField"></div>
             </fieldset>
             <!-- Checkbox conditions -->
             <fieldset class="cgu-checkbox">
               <div class="cgu">
-                <input class="checkbox-input" type="checkbox" id="cgu" name="cgu" checked/>
-                <label class="checkbox2-label" for="cgu">
-                  <span class="checkbox-icon"></span> J'ai lu et accepté les conditions d'utilisation.<abbr title="Champ obligatoire"> *</abbr>
+                <input class="checkbox__input" type="checkbox" id="cgu" name="cgu" checked/>
+                <label class="checkbox2__label" for="cgu">
+                  <span class="checkbox__icon"></span> J'ai lu et accepté les conditions d'utilisation.<abbr title="Champ obligatoire"> *</abbr>
                 </label>
                 <br>
-                <p class="error-field" id="cguErrorField"></p>
+                <p class="error__field" id="cguErrorField"></p>
               </div>
               <div class="newsletter-checkbox">
-                <input class="checkbox-input" type="checkbox" id="newsletter" name="newsletter"/>
-                <label class="checkbox2-label" for="newsletter">
-                  <span class="checkbox-icon"></span>
+                <input class="checkbox__input" type="checkbox" id="newsletter" name="newsletter"/>
+                <label class="checkbox2__label" for="newsletter">
+                  <span class="checkbox__icon"></span>
                   Je souhaite être prévenu des prochains évènements.
                 </label>
                 <br>
               </div>
             </fieldset>
-            <div class="cta-container">
+            <div class="cta__container">
               <input class="cta submit" type="submit" value="C'est parti" />
             </div>           
           </form>
             <!-- Success message -->
-          <div class="success-wrapper" id="success-wrapper">
-            <p class="success-msg" id="success-msg"></p>
-            <div class="cta-container">
+          <div class="success__wrapper" id="success__wrapper">
+            <p class="success__msg" id="success__msg"></p>
+            <div class="cta__container">
               <button class="cta close-form"> Fermer </button>
             </div>
           </div>  

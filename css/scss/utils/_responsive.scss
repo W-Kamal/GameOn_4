@@ -1,4 +1,4 @@
-//Laptop = 1280px or more
+/*Laptop = 1280px or more*/
 @include breakpoint-up(laptop-s) {
   /* Main Container */
   //Navbar
@@ -17,17 +17,17 @@
   /* Modal */
 }
 
-//Laptop = 1024px or more
+/*Laptop = 1024px or more*/
 @include breakpoint-up(laptop-s) {
   .hero__img{
     margin-left: calc((100% / 12) * 5 - 0.01px);
     width: calc((100% / 12) * 7 - 0.01px);
   }
 }
-//Laptop = 1024px or less
+/*Laptop = 1024px or less*/
 @include breakpoint-down(laptop-s) {  
   /* Main Container */
-  .main-container {
+  .main__container {
     margin: 0 auto;
     padding: 0 2.5rem;
   }
@@ -53,12 +53,12 @@
     margin-top: 2.5rem;
   }
   /* Modal */
-  .modal-container {
+  .modal__container  {
     padding: 0 1rem;
     transform: translateY(-200vh);
   }  
 }
-//tablet = 767px or less
+/* tablet = 767px or less */
 @include breakpoint-down(tablet) {
   //Footer
   .copyrights {    
@@ -68,7 +68,7 @@
 
 
   /* Hamburger Menu */
-  .main-nav {
+  .main__nav {
     background: $clr-secondary;
     position: absolute;
     z-index: 1;
@@ -119,7 +119,7 @@
 
 
   /* Navigation open styles */
-  .nav-open .main-nav {
+  .nav-open .main__nav {
     transform: translateX(0);
   }
 
@@ -137,10 +137,10 @@
   }
 }
 
-//Mobile : l = 425px m = 375px s = 320px or less
+/*Mobile : l = 425px m = 375px s = 320px or less*/
 @include breakpoint-down(mobile-l) {
   /* Main Container */
-  .main-container {
+  .main__container {
     padding: 0 1rem;
   }
 }

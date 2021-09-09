@@ -47,27 +47,27 @@ li:hover a.nav__link {
 }
 
 /* MODAL SECTION */
-.modal-view {
+.modal__view {
   color: $clr-secondary;
 }
 .navbar ul {
   font-size: 1.4vw;
 }
 
-.error-field{
+.error__field{
   color : $clr-primary-bg;
   font-size: small;
 }
-.error-text{
+.error__text{
   color : $clr-error;
 }
 // Radio btn
-.checkbox-label,
-.checkbox2-label {
+.checkbox__label,
+.checkbox2__label {
   font-size: 1rem;
 }
-.checkbox-label .checkbox-icon,
-.checkbox2-label .checkbox-icon {
+.checkbox__label .checkbox__icon,
+.checkbox2__label .checkbox__icon {
   text-indent: 1.6rem;
   white-space: nowrap;
 }
