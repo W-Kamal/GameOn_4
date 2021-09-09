@@ -29,7 +29,8 @@ li:hover a.nav__link {
 }
 // Hero
 .hero__heading {
-  font-size: 5.5rem;
+  //valeur précédente pour la taille Desk
+  font-size: 1.5rem;
   font-weight: 600;
 }
 .hero__text {
@@ -38,8 +39,10 @@ li:hover a.nav__link {
 }
 .hero__heading,
 .hero__text {
-  z-index: 1;
-  color: $clr-secondary;
+  //valeur précédente pour la taille Desk
+  //z-index: 1;
+  //color: $clr-secondary;
+  color: $clr-nav-font;
 }
 // Footer
 .footer {

@@ -33,25 +33,27 @@
   border: none;
   border-radius: 0.5rem;
   cursor: pointer;
-
+  //valeur précédente pour la taille Desk
+  // &__wrapper{
+  //   position: absolute;
+  //   top: 33rem;
+  //   left: 5rem;  
+  // }  
   &__wrapper{
-    position: absolute;
-    top: 33rem;
-    left: 5rem;  
-  }
+    display: flex;
+    justify-content: center;
+    margin-block: 2rem 1rem;    
+  }  
 }
 
 //submit/close modal button placement
-.cta__container {
-  display: flex;
-}
 .signup:hover,
 .close-form:hover {
   transition: background-color 300ms;
   background: $clr-hover-btn-bg;
 }
 
-//Submit button style
+//Disabled submit button style
 .submit:disabled {
   //filter: saturate(2.2);
   border: 1px solid #999999;

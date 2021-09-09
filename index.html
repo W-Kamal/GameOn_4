@@ -23,7 +23,7 @@
         <div class="header__logo">
           <img class="logo__img" alt="GameOn logo" src="./src/img/Logo.png"/>
         </div>
-        <nav class="main__nav">
+        <!-- <nav class="main__nav">
           <span class="hamburger"></span>
           <ul class="nav__list">
             <li class="nav__item">
@@ -39,7 +39,7 @@
               <a href="#" class="nav__link"><span>Évènements passés</span></a>
             </li>
           </ul>
-        </nav>
+        </nav> -->
       </header>
       <main class="hero">
         <section class="hero__section">
@@ -49,7 +49,9 @@
             <p class="hero__text">
               Vous aimez jouer ? Notre prochain évènement gaming est ouvert aux réservations... Places limitées !
             </p>
-            <img class="hero__img" src="./src/img/bg_img.jpg" alt="Une gameuse victorieuse devant son écran" />
+            <div class="hero__img__container">
+              <img class="hero__img" src="./src/img/bg_img.jpg" alt="Une gameuse victorieuse devant son écran" />              
+            </div>            
             <div class="cta__wrapper">
               <button class="cta signup"> Je m'inscris </button>
             </div>
@@ -162,14 +164,14 @@
                 <br>
               </div>
             </fieldset>
-            <div class="cta__container">
+            <div class="cta__wrapper">
               <button class="cta submit" id="submitBtn" type="submit" disabled>Valider</button>
             </div>           
           </form>
             <!-- Success message -->
           <div class="success__wrapper" id="success__wrapper">
             <p class="success__msg" id="success__msg"></p>
-            <div class="cta__container">
+            <div class="cta__wrapper">
               <button class="cta close-form"> Fermer </button>
             </div>
           </div>  

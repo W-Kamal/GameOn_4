@@ -2,19 +2,20 @@
 
 // 1. Vendors:
 @import "vendors/normalize";
-// 2. Configuration and helpers:
+// 2. Global:
+@import "components/global";
+// 3. Configuration and helpers:
 @import "utils/variables";
 @import "utils/mixins";
 @import "utils/typo";
 @import "utils/breakpoints";
-// 3. Components:
+// 4. Components:
 @import "components/buttons";
-@import "components/global";
 @import "components/modal";
-// 4. Layout-related sections:
+// 5. Layout-related sections:
 @import "layout/footer";
 @import "layout/header";
-// 5. Pages specific styles:
+// 6. Pages specific styles:
 @import "pages/home";
-// 6. Responsive:
+// 7. Responsive:
 @import "utils/responsive";

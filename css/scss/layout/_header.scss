@@ -3,11 +3,12 @@
   display: flex;
   justify-content: space-between;
   //z-index: $z-header-footer;
-  padding: 3rem 0 4rem 0;
-
-  img {
-    height: 3rem;
-  }
+  padding: 1.5rem 0;
+  
+  //valeur précédente pour la taille Desk
+  // img {
+  //   height: 3rem;
+  // }
 
   nav {
     display: flex;
@@ -15,7 +16,6 @@
 
   ul {
     display: flex;    
-    
   }
   li {
     margin: 0.5rem 0;
@@ -28,47 +28,70 @@
     }
   }
 }
+
+//Hamburger positionnement depuis FIGMA
+// position: absolute;
+// width: 19px;
+// height: 13.5px;
+// left: 365px;
+// top: 38px;
+
 .logo__img {
-    height: clamp(1.8rem, 2rem, 3rem);
+    height: 1rem;
 }
 // .main__nav {
 // }
 
 // Main section
-.hero{
-  position: relative;
-  padding: 0;
+//valeur précédente pour la taille Desk
+// .hero{
+//   position: relative;
+//   padding: 0;
   
-  &__heading,
-  &__text,
-  &__img {
-    position: absolute;
-  }
-}
+  
+//   &__heading,
+//   &__text,
+//   &__img {
+//     position: absolute;
+//   }
+// }
 .hero__section {
-  position: relative;
+  //valeur précédente pour la taille Desk
+  //position: relative;
   height: 40rem;
   border-radius: 0.55rem;  
   overflow: hidden;
-  box-shadow: 0 0.11rem 0.44rem 0.11rem $clr-box-shadow;
-  background-color: $clr-primary-bg;  
+  //box-shadow: 0 0.11rem 0.44rem 0.11rem $clr-box-shadow;
+  //background-color: $clr-primary-bg;  
+  display: flex;
+  flex-direction: column;
+}
+.hero__img__container{
+  margin: 0 auto;
 }
 .hero__img {
-  min-height: 100%;
-  width: calc((100% / 12) * 7 - 0.01px);
+  width: 100%;
 }
+// .hero__img {
+//   min-height: 100%;
+//   width: calc((100% / 12) * 7 - 0.01px);
+// }
 
-.hero__heading {
-  top: 4rem;
-  padding: 0 5rem;
-  width: calc((100% / 12) * 10 - 0.01px);
-}
-.hero__text {
-  top: 20rem;
-  width: calc((100% / 12) * 5 - 0.01px);
-  padding: 0 2rem 0 5rem;
-}
-.hero__heading,
-.hero__text {
-  z-index: 1;
-}
+// .hero__heading {
+//   valeur précédente pour la taille Desk
+//   top: 4rem;
+//   padding: 0 5rem;
+//   width: calc((100% / 12) * 10 - 0.01px);
+
+// }
+// .hero__text {
+//   valeur précédente pour la taille Desk
+//   top: 20rem;
+//   width: calc((100% / 12) * 5 - 0.01px);
+//   padding: 0 2rem 0 5rem;
+// }
+//valeur précédente pour la taille Desk
+// .hero__heading,
+// .hero__text {
+//   z-index: 1;
+// }

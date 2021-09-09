@@ -9,7 +9,7 @@
 
 // how modal globaly look
 .modal__container  {
-  transform: translateY(-100vh);
+  transform: translateY(-200vh);
   position: fixed;
   z-index: 1;
   left: 0;
@@ -20,7 +20,9 @@
 }
 .modal__view {
   max-width: 32rem;
-  margin: 3vh auto;
+  //valeur précédente pour la taille Desk
+  //margin: 3vh auto;
+  margin: 3vh 0;  
   background: $clr-primary-bg ;
   border-radius: 0.55rem;
   overflow: hidden;
