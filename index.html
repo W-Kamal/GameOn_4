@@ -21,7 +21,7 @@
     <div class="main__container">
       <header class="navbar">
         <div class="header__logo">
-          <img class="logo_img" alt="GameOn logo" src="./src/img/Logo.png"/>
+          <img class="logo__img" alt="GameOn logo" src="./src/img/Logo.png"/>
         </div>
         <nav class="main__nav">
           <span class="hamburger"></span>
@@ -68,27 +68,27 @@
             <fieldset class="form-inputs">
               <div class="form-item"><!-- input text firstname -->
                 <label class="item-label" for="firstName">Prénom<abbr title="Champ obligatoire"> *</abbr></label><br>                
-                <input class="text__control" type="text" id="firstName" name="firstName" value="te"/><br>
+                <input class="text__control" type="text" id="firstName" name="firstName" /><br>
                 <p class="error__field" id="firstNameErrorField"></p>
               </div>
               <div class="form-item"><!-- input text lastname -->
                 <label class="item-label" for="lastName">Nom<abbr title="Champ obligatoire"> *</abbr></label><br>
-                <input class="text__control" type="text" id="lastName" name="lastName" value="te"/><br>
+                <input class="text__control" type="text" id="lastName" name="lastName"/><br>
                 <p class="error__field" id="lastNameErrorField"></p>
               </div>
               <div class="form-item"><!-- input email -->
                 <label class="item-label" for="email">E-mail<abbr title="Champ obligatoire"> *</abbr></label><br>
-                <input class="text__control" type="email" id="email" name="email" value="test@fr.fr"/><br>
+                <input class="text__control" type="email" id="email" name="email"/><br>
                 <p class="error__field" id="emailErrorField"></p>
               </div>
               <div class="form-item"><!-- input date birthday -->
                 <label class="item-label" for="birthday">Date de naissance<abbr title="Champ obligatoire"> *</abbr></label><br>
-                <input class="text__control" type="date" id="birthday" name="birthday" value="2000-12-12"/><br>
+                <input class="text__control" type="date" id="birthday" name="birthday"/><br>
                 <p class="error__field" id="birthdayErrorField"></p>
               </div>              
               <div class="form-item"><!-- Nombre de tournois -->
                 <label class="item-label" for="nbTournament">À combien de tournois GameOn avez-vous déjà participé ?<abbr title="Champ obligatoire"> *</abbr></label><br>
-                <input type="number" class="text__control" id="nbTournament" name="nbTournament" min="0" max="100" value="2">
+                <input type="number" class="text__control" id="nbTournament" name="nbTournament" min="0" max="100">
                 <p class="error__field" id="nbTournamentErrorField"></p>
               </div> 
             </fieldset>
@@ -97,7 +97,7 @@
                 <legend class="text__label">Dans quelles villes ?<abbr title="Champ obligatoire"> *</abbr></legend>
               <ul class="location-item-list" id="checkbox-list">
                 <li>
-                  <input class="checkbox__input" type="radio" id="location1" name="location" value="New York" checked/>
+                  <input class="checkbox__input" type="radio" id="location1" name="location" value="New York"/>
                   <label class="checkbox__label" for="location1">
                     <span class="checkbox__icon"></span>
                     New York
@@ -146,7 +146,7 @@
             <!-- Checkbox conditions -->
             <fieldset class="cgu-checkbox">
               <div class="cgu">
-                <input class="checkbox__input" type="checkbox" id="cgu" name="cgu" checked/>
+                <input class="checkbox__input" type="checkbox" id="cgu" name="cgu" />
                 <label class="checkbox2__label" for="cgu">
                   <span class="checkbox__icon"></span> J'ai lu et accepté les conditions d'utilisation.<abbr title="Champ obligatoire"> *</abbr>
                 </label>
@@ -163,7 +163,7 @@
               </div>
             </fieldset>
             <div class="cta__container">
-              <input class="cta submit" type="submit" value="C'est parti" />
+              <button class="cta submit" id="submitBtn" type="submit" disabled>Valider</button>
             </div>           
           </form>
             <!-- Success message -->

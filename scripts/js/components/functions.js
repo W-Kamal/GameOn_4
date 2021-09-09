@@ -39,14 +39,15 @@ const regEmailValidation = (name) => {
   const regexMail = /^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$/;
   return regexMail.test(name);  
 }
-const setAge = (inputField) => {  
+const setAge = (inputField) => {
   const birthday = new Date(inputField);
-    if (!(birthday instanceof Date) || isNaN(birthday)) {
-    return false;
-  }
+    if (!(birthday instanceof Date) || isNaN(birthday)) 
+    {
+      return false;
+    }
   const currentDate = Date.now();
-  const yearInMs = 365.25*24*60*60*1000;
-  const age = Math.ceil((currentDate-birthday)/yearInMs);
+  const yearInMs = 365.25 * 24 * 60 * 60 * 1000;
+  const age = (currentDate-birthday) / yearInMs;
   return age>= 18;
 }
 
@@ -148,15 +149,20 @@ function formIsValid() {
     return true;
 	};	
 }
-
+function activeSubmitBtn() {
+  const submitBtn = document.getElementById("submitBtn");
+  if (!allPropertiesAreTrue(fieldValidStatus)) {
+    submitBtn.disabled = true;
+  } else {
+    submitBtn.disabled = false;
+	};
+}
 const displaySuccess = (firstNameInputField, lastNameInputField) => {
   const modalDisplay = document.querySelector(".modal__view");
   modalDisplay.classList.add(".success-style");
   const successField = document.getElementById('success__msg');
   successField.textContent = `Félicitation ${firstNameInputField.value} ${lastNameInputField.value}, votre inscription est enregistrée.`;
 };
-
-
 function removeForm () {
   const form = document.getElementById("registration-form");
   if (form.classList.contains('hidden')) {
@@ -187,6 +193,7 @@ export {
   cityValidation,
   cguValidation,
   formIsValid,
+  activeSubmitBtn,
   displaySuccess,
   removeForm
 };

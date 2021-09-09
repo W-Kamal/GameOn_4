@@ -1,28 +1,3 @@
-.cta {
-  min-width: 12rem;
-  background: $clr-primary;
-  margin: 0 auto;
-  padding: .75rem 1.5rem;
-  border: none;
-  border-radius: 0.5rem;
-  cursor: pointer;
-
-  &__wrapper{
-    position: absolute;
-    top: 33rem;
-    left: 5rem;  
-  }
-
-  &:hover {
-    transition: background-color 300ms;
-    background: $clr-hover-btn-bg;
-  }
-}
-//submit/close modal button placement
-.cta__container {
-  display: flex;
-}
-
 // Cross which close modal
 .close__btn:before,
 .close__btn:after {
@@ -48,4 +23,39 @@
   opacity: 1;
   cursor: pointer;
   transform: scale(0.7);
+}
+
+.cta {
+  min-width: 12rem;
+  background: $clr-primary;
+  margin: 0 auto;
+  padding: .75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+
+  &__wrapper{
+    position: absolute;
+    top: 33rem;
+    left: 5rem;  
+  }
+}
+
+//submit/close modal button placement
+.cta__container {
+  display: flex;
+}
+.signup:hover,
+.close-form:hover {
+  transition: background-color 300ms;
+  background: $clr-hover-btn-bg;
+}
+
+//Submit button style
+.submit:disabled {
+  //filter: saturate(2.2);
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+  transition: all 200ms ease-in-out;
 }

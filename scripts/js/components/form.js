@@ -7,6 +7,7 @@ import {
   cityValidation,
   cguValidation,
   formIsValid,
+  activeSubmitBtn,
   displaySuccess,
   removeForm
 } from './functions.js';
@@ -39,42 +40,54 @@ const success = document.getElementById('success__wrapper');
 /*   CHECK ON THE GO    */
 /* ==================== */
 firstName.oninput = () => {
-  firstNameValidation(firstName, firstNameErrorField)
+  firstNameValidation(firstName, firstNameErrorField);
+  activeSubmitBtn();
 };
 firstName.addEventListener ('blur', () => {
   firstNameValidation(firstName, firstNameErrorField);
+  activeSubmitBtn();
 });
 lastName.oninput = () => {
-  lastNameValidation(lastName, lastNameErrorField)
+  lastNameValidation(lastName, lastNameErrorField);
+  activeSubmitBtn();
 };
 lastName.addEventListener('blur', () => {
   lastNameValidation (lastName, lastNameErrorField);
+  activeSubmitBtn();
 });
 emailAddr.oninput = () => {
-  emailValidation(emailAddr, emailAddrErrorField)
+  emailValidation(emailAddr, emailAddrErrorField);
+  activeSubmitBtn();
 };
 emailAddr.addEventListener('blur', () => {
   emailValidation (emailAddr, emailAddrErrorField);
+  activeSubmitBtn();
 });
 birthday.oninput = () => {
-  birthdayValidation(birthday, birthdayErrorField)
+  birthdayValidation(birthday, birthdayErrorField);
+  activeSubmitBtn();
 };
 birthday.addEventListener('blur', () => {
   birthdayValidation (birthday, birthdayErrorField);
+  activeSubmitBtn();
 });
 nbTournament.oninput = () => {
-  tournamentValidation(nbTournament, nbTournamentErrorField)
+  tournamentValidation(nbTournament, nbTournamentErrorField);
+  activeSubmitBtn();
 };
 nbTournament.addEventListener('blur', () => {
   tournamentValidation (nbTournament, nbTournamentErrorField);
+  activeSubmitBtn();
 });
 city.forEach((btn) =>
   btn.addEventListener("change", () => {
     cityValidation (cityErrorField)
+    activeSubmitBtn();
   })
 );
 cgu.onchange = () => {
-  cguValidation(cgu, cguErrorField)
+  cguValidation(cgu, cguErrorField);
+  activeSubmitBtn();
 };
 
 /* ==================== */
