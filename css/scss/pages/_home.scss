@@ -1,12 +1,7 @@
 /* Landing Page */
 .main__container {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: 1fr;
-  grid-template-rows: 5vh 6fr 1fr;
-  align-items: center;
   max-width: 88rem;
   //valeur précédente pour la taille Desk
   //padding: 0 2.5rem;  
-  padding: 0 1.5rem;
+  padding: 0 1.2rem;
 }

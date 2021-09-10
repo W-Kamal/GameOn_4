@@ -1,44 +1,74 @@
-// Navbar section
-.navbar {
+header{
   display: flex;
   justify-content: space-between;
-  //z-index: $z-header-footer;
+  align-items: center;
   padding: 1.5rem 0;
-  
-  //valeur précédente pour la taille Desk
-  // img {
-  //   height: 3rem;
-  // }
-
-  nav {
-    display: flex;
-  }
-
-  ul {
-    display: flex;    
-  }
-  li {
-    margin: 0.5rem 0;
-    padding: 0.75rem 1rem;
-    border-radius: 0.5rem;
-
-    &:hover {
-      background: $clr-primary;
-      transition: background-color 300ms;
-    }
-  }
+  flex-wrap: wrap;
 }
+// Nav section
+// .main__nav {    
+//   valeur précédente pour la taille Desk
+//   img {
+//     height: 3rem;
+//   }
 
-//Hamburger positionnement depuis FIGMA
-// position: absolute;
-// width: 19px;
-// height: 13.5px;
-// left: 365px;
-// top: 38px;
+//   .nav__item {
+//     margin: 0.5rem 0;
+//     padding: 0.75rem 1rem;
+//     border-radius: $border-radius;
 
+//     &:hover {
+//       background: $clr-primary;
+//       transition: background-color 300ms;
+//     }    
+//   }
+// }
 .logo__img {
-    height: 1rem;
+    height: 1.3rem;
 }
+#hamburgerToggle {
+  display: inline-block;
+  z-index: 1;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+.nav__list {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  right: 0;
+  z-index: 1;
+  width: 14rem;
+  border: 0.1rem solid $clr-primary;
+  border-radius: 0.75rem;
+  background: white;
+}
+
+.side__nav {
+  position: relative;
+  display: block;
+
+  #hamburgerToggle {
+    color: $clr-secondary;
+    background: $clr-primary;
+    transition: all 200ms ease ;
+  }
+  .nav__list {
+    display: flex;
+    padding: 0.25rem 0.5rem;
+    box-shadow: 0 0.75rem 0.55rem $clr-box-shadow;
+  }
+  .nav__item{
+  margin: 0.4rem 0;
+  padding: 0.5rem 0.5rem;
+  border-radius: 0.5rem;
+  }
+  .nav__item:hover {
+    background: $clr-primary;
+    transition: background-color 300ms;
+  }
+}
+
 // .main__nav {
 // }
 
@@ -55,22 +85,18 @@
 //     position: absolute;
 //   }
 // }
-.hero__section {
-  //valeur précédente pour la taille Desk
-  //position: relative;
-  height: 40rem;
-  border-radius: 0.55rem;  
-  overflow: hidden;
-  //box-shadow: 0 0.11rem 0.44rem 0.11rem $clr-box-shadow;
-  //background-color: $clr-primary-bg;  
-  display: flex;
-  flex-direction: column;
-}
+// .hero__section {
+//   valeur précédente pour la taille Desk
+//   position: relative;
+//   box-shadow: 0 0.11rem 0.44rem 0.11rem $clr-box-shadow;
+//   background-color: $clr-primary-bg;  
+// }
 .hero__img__container{
   margin: 0 auto;
 }
 .hero__img {
   width: 100%;
+  border-radius: $border-radius;
 }
 // .hero__img {
 //   min-height: 100%;
@@ -84,12 +110,13 @@
 //   width: calc((100% / 12) * 10 - 0.01px);
 
 // }
-// .hero__text {
+.hero__text {
 //   valeur précédente pour la taille Desk
 //   top: 20rem;
 //   width: calc((100% / 12) * 5 - 0.01px);
 //   padding: 0 2rem 0 5rem;
-// }
+  margin: 1rem 0;
+}
 //valeur précédente pour la taille Desk
 // .hero__heading,
 // .hero__text {

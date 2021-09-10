@@ -24,7 +24,7 @@
   //margin: 3vh auto;
   margin: 3vh 0;  
   background: $clr-primary-bg ;
-  border-radius: 0.55rem;
+  border-radius: $border-radius;
   overflow: hidden;
   position: relative;  
   padding: 2.5rem 2rem 1rem 2rem;  
@@ -41,7 +41,7 @@
   margin-top: 0.25rem;
   padding: 0.5rem;
   border: 0.044rem solid #ccc;
-  border-radius: 0.44rem;
+  border-radius: $border-radius;
   outline: none;
 }
 

@@ -6,35 +6,43 @@ html {
   font-size: 1rem;
   font-weight: 300;
 }
-a {
-  color: $clr-primary;
-  text-decoration: none;
-
-  &:hover {
-    color: $clr-primary;
-  }
-}
 abbr[title] {
   text-decoration: none;
 }
 
 /* MAIN PAGE SECTION */
-//Header
-.nav__link {
-  color: $clr-nav-font ;
+//Navbar
+.side__nav {
+  .nav__list {
+    font-size: 1rem;
+  }
+  .nav__item:hover{
+    cursor: pointer;
+
+    .nav__link {
+      color: $clr-secondary;
+      text-decoration: underline;
+    }
+  }
+  .nav__link {
+    color: $clr-nav-font;
+    text-decoration: none;
+  }
 }
-li:hover a.nav__link {
-    color: $clr-secondary;
-    text-decoration: underline;
+#hamburgerToggle {
+  color: $clr-primary;
+  font-size: 1rem;
+  transition: all 150ms;
 }
 // Hero
 .hero__heading {
   //valeur précédente pour la taille Desk
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 600;
+  line-height: 2rem;
 }
 .hero__text {
-  font-size: 1.45vw;
+  font-size: 0.8rem;
   line-height: 1.5;
 }
 .hero__heading,
@@ -47,16 +55,16 @@ li:hover a.nav__link {
 // Footer
 .footer {
   font-family: $font-default;
+  font-size: 0.8rem;
+}
+.copyrights {
+  font-size: 0.6rem;
 }
 
 /* MODAL SECTION */
 .modal__view {
   color: $clr-secondary;
 }
-.nav__link{
-  font-size: 1.4vw;
-}
-
 .error__field{
   color : $clr-primary-bg;
   font-size: small;
@@ -74,8 +82,12 @@ li:hover a.nav__link {
   text-indent: 1.6rem;
   white-space: nowrap;
 }
+
+/* TOOLS */
 // Buttons
 .cta {
   color: $clr-secondary;
-  font-size: 1.3rem;
+  //valeur précédente pour la taille Desk
+  //font-size: 1.3rem;
+  font-size: 0.8rem;
 }

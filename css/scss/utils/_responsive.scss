@@ -1,8 +1,8 @@
 // /*Laptop = 1280px or more*/
 // @include breakpoint-up(laptop-s) {
 //   /* Main Container */
-//   //Navbar
-//   .navbar {
+//   //Nav
+//   .nav {
 //     padding: 3rem 5rem 4rem 5rem;
 //   }
 //   //Hero
@@ -30,15 +30,15 @@
 //     margin: 0 auto;
 //     padding: 0 2.5rem;
 //   }
-//   .navbar {
+//   .nav {
 //     padding: 2rem 0 3rem 0;
 //   }
 //   //Header
-//   .navbar {
+//   .nav {
 //     padding-bottom: 2rem;
 //   }
 //   //Hero
-//   .navbar .logo__img {
+//   .nav .logo__img {
 //     height: 2.5rem;
 //   }  
 //   .hero__img{
@@ -69,8 +69,8 @@
   //   position: absolute;
   //   z-index: 1;
   //   right: 0;
-  //   border-radius: 0.55rem;
-  //   box-shadow: 0 0 3em rgba(0,0,0,.15);
+  //   border-radius: $border-radius;
+  //   box-shadow: 0 0 3em $clr-box-shadow;
   //   transform: translateX(100%);
   //   transition: transform 300ms cubic-bezier(.5, 0, .5, 1)
   // }

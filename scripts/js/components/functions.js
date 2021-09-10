@@ -124,7 +124,7 @@ const cguValidation = (inputField, errorField) => {
   }
 };
 
-/** FORM VALIDATION **/
+/** VALIDATION **/
 function allPropertiesAreTrue(object) {
   let res = false;
 	for(const prop in object){
@@ -180,9 +180,34 @@ function removeForm () {
       once: true,
       passive: false
     });
-  }  
+  }
+  form.reset()
 }
 
+/** VALID FORM AND LOCALSTORAGE OF INPUTS **/
+let players = [];
+
+const sign = (e) => {
+  e.preventDefault();
+  if(formIsValid()) {
+    console.log("Validation finale OK")
+    
+    let playerId = {
+      firstName : document.getElementById('firstName').value,
+      lastName : document.getElementById('lastName').value,
+      email : document.getElementById('email').value,
+      birthday : document.getElementById('birthday').value,
+      nbtournament : document.getElementById('nbTournament').value,
+      location : document.querySelector('input[name="location"]:checked').value
+    }
+    players.push(playerId);
+    localStorage.setItem('playersList', JSON.stringify(players));
+
+    displaySuccess(firstName, lastName);
+    removeForm();    
+  };
+  
+}
 
 export {
   firstNameValidation,
@@ -195,5 +220,6 @@ export {
   formIsValid,
   activeSubmitBtn,
   displaySuccess,
-  removeForm
+  removeForm,
+  sign
 };

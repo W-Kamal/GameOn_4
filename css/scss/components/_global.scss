@@ -3,29 +3,21 @@ html {
   scroll-behavior: smooth;
 }
 h1, h2, h3, h4, h5, h6, p {
-  margin: .5rem 0;
+  margin: 0;
 }
-// p {
-//   margin-bottom: 0;
-//   padding: 0.5vw;
-// }
-
 ul {
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
-
 *,
 *:before,
 *:after {
   box-sizing: inherit;
 }
-
 abbr {
   padding: 0 0.125rem;
 }
-
 fieldset {
   padding: 0;
   border: none;

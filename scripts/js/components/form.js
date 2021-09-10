@@ -9,10 +9,9 @@ import {
   formIsValid,
   activeSubmitBtn,
   displaySuccess,
-  removeForm
+  removeForm,
+  sign
 } from './functions.js';
-
-/** CONTROL AND VALIDATION MODULE **/
 
 const firstName = document.getElementById('firstName');
 const firstNameErrorField = document.getElementById('firstNameErrorField');
@@ -35,7 +34,6 @@ const cguErrorField = document.getElementById('cguErrorField');
 
 const newsletter = document.getElementById('newsletter');
 const success = document.getElementById('success__wrapper');
-
 /* ==================== */
 /*   CHECK ON THE GO    */
 /* ==================== */
@@ -89,54 +87,9 @@ cgu.onchange = () => {
   cguValidation(cgu, cguErrorField);
   activeSubmitBtn();
 };
-
 /* ==================== */
-/*  Remove à exporter   */
+/*     SUBMIT FORM      */
 /* ==================== */
-const removeErrors = () => {
-  const errorFieldsList = [
-    firstNameErrorField,
-    lastNameErrorField,
-    emailAddrErrorField,
-    birthdayErrorField,
-    nbTournamentErrorField,
-    cityErrorField,
-    cguErrorField,
-  ];
-  const inputFields = document.querySelectorAll("input");
-
-  for (const errorField of errorFieldsList) {
-    errorField.textContent = "";
-    errorField.classList.remove("error-txt");
-  }
-  for (let inputField of inputFields) {
-    inputField.classList.remove("error__border");
-  }
-};
-
-/* ==================== */
-/*   CHECK ON SUBMIT    */
-/* ==================== */
-
-const form = document.getElementById('registration-form');
-
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-
-
-  firstNameValidation(firstName, firstNameErrorField);
-  lastNameValidation(lastName, lastNameErrorField);
-  emailValidation(emailAddr, emailAddrErrorField);
-  birthdayValidation(birthday, birthdayErrorField);
-  tournamentValidation(nbTournament, nbTournamentErrorField);
-  cityValidation (cityErrorField);
-  cguValidation(cgu, cguErrorField);
-  
-  if(formIsValid()) {
-    console.log("Validation finale OK")
-    displaySuccess(firstName, lastName); 
-    removeForm();    
-  };
+document.addEventListener('DOMContentLoaded', ()=>{
+  document.getElementById('submitBtn').addEventListener('click', sign);
 });
-
-export {removeErrors};

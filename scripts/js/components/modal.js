@@ -1,4 +1,4 @@
-import {removeErrors} from './form.js';
+//import {removeErrors} from './form.js';
 /*  Module to manage opening and closing modal events.  */
 
 const modalBg = document.querySelector(".modal__container ");
@@ -12,8 +12,6 @@ function closeModal () {
   modalBg.classList.remove ('is-open');
   modalBg.classList.toggle ('is-close');
   form.reset();
-  removeErrors();
-  document.location.reload();
 }
 
 // Open modal event
