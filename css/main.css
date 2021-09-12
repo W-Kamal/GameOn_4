@@ -391,6 +391,7 @@ fieldset {
 }
 
 /* FONT PARAMs */
+/* Global */
 html {
   font-family: "DM Sans", Arial, Helvetica, sans-serif;
   font-size: 1rem;
@@ -402,6 +403,12 @@ abbr[title] {
 }
 
 /* MAIN PAGE SECTION */
+.side__nav #hamburgerToggle {
+  color: white;
+  background: #fe1631;
+  transition: all 200ms ease;
+}
+
 .side__nav .nav__list {
   font-size: 1rem;
 }
@@ -421,15 +428,13 @@ abbr[title] {
 }
 
 #hamburgerToggle {
+  font-size: 1.5rem;
   color: #fe1631;
-  font-size: 1rem;
-  transition: all 150ms;
 }
 
 .hero__heading {
   font-size: 2rem;
   font-weight: 600;
-  line-height: 2rem;
 }
 
 .hero__text {
@@ -442,8 +447,8 @@ abbr[title] {
   color: black;
 }
 
-.footer {
-  font-family: "DM Sans", Arial, Helvetica, sans-serif;
+.cta {
+  color: white;
   font-size: 0.8rem;
 }
 
@@ -476,10 +481,67 @@ abbr[title] {
   white-space: nowrap;
 }
 
-/* TOOLS */
-.cta {
-  color: white;
-  font-size: 0.8rem;
+/* RESPONSIVE */
+/* From mobile-l size (425) and more */
+@media screen and (min-width: 425px) {
+  .hero__heading {
+    font-size: 8vw;
+    font-weight: 300;
+  }
+  .hero__text {
+    font-size: 1.2rem;
+  }
+}
+
+/* From tablet size (640) and more */
+@media screen and (min-width: 640px) {
+  .hero__heading {
+    font-size: 3rem;
+    font-weight: 500;
+  }
+  .hero__text {
+    font-size: 1.2rem;
+  }
+  .cta {
+    font-size: 1rem;
+  }
+}
+
+/* From laptop size (1024) and more */
+@media screen and (min-width: 1024px) {
+  .nav__item:hover {
+    cursor: pointer;
+  }
+  .nav__item:hover .nav__link {
+    color: white;
+    text-decoration: underline;
+  }
+  .nav__link {
+    font-size: 1.3rem;
+    color: black;
+    text-decoration: none;
+  }
+  .hero__heading {
+    font-size: 5rem;
+    font-weight: 700;
+  }
+  .hero__heading,
+  .hero__text {
+    color: white;
+  }
+  .cta {
+    font-size: 1.4rem;
+  }
+  .copyrights {
+    font-size: initial;
+  }
+}
+
+/* From laptop size (1280) and more */
+@media screen and (min-width: 1440px) {
+  .hero__text {
+    font-size: 1.4rem;
+  }
 }
 
 .close__btn:before,
@@ -533,11 +595,48 @@ abbr[title] {
   background: #3877ad;
 }
 
+.submit {
+  margin: 1.5rem auto 1rem auto;
+}
+
 .submit:disabled {
   border: 1px solid #999999;
   background-color: #cccccc;
   color: #666666;
   transition: all 200ms ease-in-out;
+}
+
+.cta__submit__wrapper,
+.success__wrapper {
+  text-align: center;
+}
+
+/* RESPONSIVE */
+/* From mobile-l size (425) and more */
+@media screen and (min-width: 425px) {
+  .cta {
+    min-width: 12rem;
+    padding: .75rem 1.5rem;
+  }
+}
+
+/* From laptop size (1024) and more */
+@media screen and (min-width: 1024px) {
+  .cta__wrapper {
+    position: absolute;
+    display: initial;
+    justify-content: initial;
+    margin-block: initial;
+    top: 33rem;
+    left: 3rem;
+  }
+}
+
+/* From laptop size (1280) and more */
+@media screen and (min-width: 1280px) {
+  .cta__wrapper {
+    left: 5rem;
+  }
 }
 
 .is-open {
@@ -561,7 +660,7 @@ abbr[title] {
 
 .modal__view {
   max-width: 32rem;
-  margin: 3vh 0;
+  margin: 8vh auto;
   background: #242424;
   border-radius: 0.5rem;
   overflow: hidden;
@@ -685,7 +784,12 @@ ul.location-item-list li {
 }
 
 .success__wrapper {
+  display: none;
+}
+
+.success__wrapper {
   display: block;
+  height: auto;
   padding: 0.83rem 8%;
 }
 
@@ -694,7 +798,7 @@ ul.location-item-list li {
 }
 
 .hidden {
-  height: 20vh;
+  height: 100%;
   display: none;
 }
 
@@ -740,6 +844,22 @@ ul.location-item-list li {
   text-align: center;
   margin: 2rem 0 1rem;
   font-weight: 600;
+  /* From laptop size (1024) and more */
+}
+
+@media screen and (min-width: 1024px) {
+  .copyrights {
+    text-align: initial;
+    padding: 5rem 0 3rem 0;
+    margin: 0.5rem 0;
+  }
+}
+
+/* From laptop size (1280) and more */
+@media screen and (min-width: 1280px) {
+  footer {
+    padding: 0;
+  }
 }
 
 header {
@@ -751,11 +871,10 @@ header {
 }
 
 .logo__img {
-  height: 1.3rem;
+  height: 1.7rem;
 }
 
 #hamburgerToggle {
-  display: inline-block;
   z-index: 1;
   padding: 0.5rem;
   border-radius: 0.5rem;
@@ -776,12 +895,6 @@ header {
 .side__nav {
   position: relative;
   display: block;
-}
-
-.side__nav #hamburgerToggle {
-  color: white;
-  background: #fe1631;
-  transition: all 200ms ease;
 }
 
 .side__nav .nav__list {
@@ -810,19 +923,132 @@ header {
   border-radius: 0.5rem;
 }
 
-.hero__text {
-  margin: 1rem 0;
-}
-
 /* Landing Page */
 .main__container {
-  max-width: 88rem;
+  max-width: 40rem;
+  margin: 0 auto;
   padding: 0 1.2rem;
 }
 
-/*Laptop = 1024px or more*/
-/*Laptop = 1024px or less*/
-/* tablet = 767px or less */
-/* Navigation open styles */
-/* Change this stuff below */
-/*Mobile : l = 425px m = 375px s = 320px or less*/
+@media screen and (min-width: 768px) {
+  .main__container {
+    padding: 0 2.5rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .main__container {
+    max-width: 90rem;
+  }
+}
+
+/* From mobile-l size (425) and more */
+@media screen and (min-width: 425px) {
+  header {
+    padding: 2rem 0;
+  }
+  .hero__heading {
+    padding-right: 3rem;
+  }
+}
+
+/* From mobile-l size (1024) and more */
+@media screen and (min-width: 1024px) {
+  header {
+    padding: 2rem 0 3rem 0;
+  }
+  .logo__img {
+    height: 2.5rem;
+  }
+  #main__nav {
+    display: flex;
+  }
+  #main__nav img {
+    height: 3rem;
+  }
+  #main__nav #hamburgerToggle {
+    display: none;
+  }
+  #main__nav .nav__list {
+    display: flex;
+    flex-direction: initial;
+    position: initial;
+    right: initial;
+    z-index: initial;
+    width: initial;
+    border: none;
+    border-radius: initial;
+    background: initial;
+  }
+  #main__nav .nav__item {
+    margin: 0.5rem 0;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+  }
+  #main__nav .nav__item:hover {
+    background: #fe1631;
+    transition: background-color 300ms;
+  }
+  #main__nav .side__nav {
+    display: none;
+  }
+  .hero {
+    position: relative;
+    padding: 0;
+  }
+  .hero__heading, .hero__text, .hero__img {
+    position: absolute;
+  }
+  .hero__img__container {
+    margin: 0;
+  }
+  .hero__img {
+    min-height: 100%;
+    width: calc((100% / 12) * 7 - 0.01px);
+    margin-left: calc((100% / 12) * 5 - 0.01px);
+    object-fit: cover;
+  }
+  .hero__section {
+    position: relative;
+    box-shadow: 0 0.11rem 0.44rem 0.11rem rgba(0, 0, 0, 0.2);
+    background-color: #242424;
+    height: 40rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .hero__heading {
+    position: absolute;
+    top: 4rem;
+    padding: 0 5rem;
+    width: calc((100% / 12) * 10 - 0.01px);
+  }
+  .hero__text {
+    position: absolute;
+    top: 23rem;
+    width: calc((100% / 12) * 5 - 0.01px);
+    padding: 0 2rem 0 5rem;
+    margin: 1rem 0;
+  }
+  .hero__heading,
+  .hero__text {
+    z-index: 1;
+    padding-left: 3rem;
+  }
+}
+
+/*Laptop = 1280px or more*/
+@media screen and (min-width: 1280px) {
+  .logo__img {
+    height: 3rem;
+  }
+  header {
+    padding: 3rem 5rem 4rem 5rem;
+  }
+  .hero {
+    padding: 0 5rem;
+    position: relative;
+  }
+}

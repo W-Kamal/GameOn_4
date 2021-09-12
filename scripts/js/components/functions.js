@@ -9,7 +9,7 @@ const errorMsgList = {
   location: "Vous devez choisir une ville.",
   cgu: "Vous devez acceptez les conditions d'utilisation.",
 };
-const fieldValidStatus = {
+let fieldValidStatus = {
 firstNameIsValid: false,
 lastNameIsValid: false,
 emailIsValid: false,
@@ -18,6 +18,16 @@ tournamentIsValid: false,
 cityIsValid: false,
 cguIsValid: false,
 };
+
+const firstNameErrorField = document.getElementById('firstNameErrorField');
+const lastNameErrorField = document.getElementById('lastNameErrorField');
+const emailAddrErrorField = document.getElementById('emailErrorField');
+const birthdayErrorField = document.getElementById('birthdayErrorField');
+const nbTournamentErrorField = document.getElementById('nbTournamentErrorField');
+const cityErrorField = document.getElementById('locationErrorField');
+const cguErrorField = document.getElementById('cguErrorField');
+const form = document.getElementById("registration-form");
+const submitBtn = document.getElementById("submitBtn");
 
 /** UTILITY FUNCTIONS **/
 
@@ -125,6 +135,7 @@ const cguValidation = (inputField, errorField) => {
 };
 
 /** VALIDATION **/
+//Control if all input fields have valid status on true
 function allPropertiesAreTrue(object) {
   let res = false;
 	for(const prop in object){
@@ -140,40 +151,76 @@ function allPropertiesAreTrue(object) {
     return false;
   }
 }
+
+//Control if all value are valid, form is valid and return true
 function formIsValid() {
 	if (!allPropertiesAreTrue(fieldValidStatus)) {
-    console.log("PAS OK") 
     return false 
   } else {
-    console.log("C'EST BON")
     return true;
 	};	
 }
+
+//Control if all input are valid (not empty AND verification is ok)
 function activeSubmitBtn() {
-  const submitBtn = document.getElementById("submitBtn");
   if (!allPropertiesAreTrue(fieldValidStatus)) {
     submitBtn.disabled = true;
   } else {
     submitBtn.disabled = false;
 	};
 }
+//Display success view
 const displaySuccess = (firstNameInputField, lastNameInputField) => {
-  const modalDisplay = document.querySelector(".modal__view");
-  modalDisplay.classList.add(".success-style");
-  const successField = document.getElementById('success__msg');
-  successField.textContent = `Félicitation ${firstNameInputField.value} ${lastNameInputField.value}, votre inscription est enregistrée.`;
+  setTimeout(function () {
+    const successDisplay = document.getElementById('success__wrapper');
+    successDisplay.classList.remove('hidden');
+    const successField = document.getElementById('success__msg');
+    successField.textContent = `Votre inscription est enregistrée.`;
+  }, 300);
+  
 };
+
+//Set input status value array to false + disable submit btn
+function resetFormStatusValue(object) {
+  for(let prop in object){
+    prop = false;
+  }  
+  submitBtn.disabled = true;
+}
+// Remove all error border + msg of the form
+function removeAllErrors () {
+  const errorFieldsArr = [
+    firstNameErrorField,
+    lastNameErrorField,
+    emailAddrErrorField,
+    birthdayErrorField,
+    nbTournamentErrorField,
+    cityErrorField,
+    cguErrorField
+  ]
+  const inputFields = document.querySelectorAll("input");
+
+  for (const errorField of errorFieldsArr) {
+    errorField.textContent = "";
+    errorField.classList.remove("error__text");
+  }
+
+  for (let inputField of inputFields) {
+    inputField.classList.remove("error__border");
+  }
+}
+
+//Make form disapear to free space for success view + reset status array + refresh form
 function removeForm () {
-  const form = document.getElementById("registration-form");
   if (form.classList.contains('hidden')) {
     form.classList.remove('hidden');
     setTimeout(function () {
       form.classList.remove('visuallyhidden');
-    }, 20);
+    }, 200);
   } else {
     form.classList.add('visuallyhidden');    
     form.addEventListener('transitionend', function(e) {
-      form.classList.add('hidden');
+    form.classList.add('hidden');
     }, 
     {
       capture: false,
@@ -181,16 +228,19 @@ function removeForm () {
       passive: false
     });
   }
-  form.reset()
+  resetFormStatusValue(fieldValidStatus);
+  removeAllErrors ();
+  form.reset ();
 }
-
 /** VALID FORM AND LOCALSTORAGE OF INPUTS **/
+//  Control if form is valid,
+//  + add input values in array of object, each object (on localstorage) is a user,
+//  + remove form + display success
 let players = [];
 
 const sign = (e) => {
   e.preventDefault();
   if(formIsValid()) {
-    console.log("Validation finale OK")
     
     let playerId = {
       firstName : document.getElementById('firstName').value,
@@ -202,9 +252,9 @@ const sign = (e) => {
     }
     players.push(playerId);
     localStorage.setItem('playersList', JSON.stringify(players));
-
-    displaySuccess(firstName, lastName);
-    removeForm();    
+    
+    removeForm ();
+    displaySuccess(firstName, lastName);      
   };
   
 }

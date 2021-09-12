@@ -1,6 +1,7 @@
 /* FONT PARAMs */
 $font-default: "DM Sans", Arial, Helvetica, sans-serif;
 
+/* Global */
 html {
   font-family: $font-default;
   font-size: 1rem;
@@ -11,8 +12,13 @@ abbr[title] {
 }
 
 /* MAIN PAGE SECTION */
-//Navbar
+//NAVIGATION
 .side__nav {
+  #hamburgerToggle {
+    color: $clr-secondary;
+    background: $clr-primary;
+    transition: all 200ms ease ;
+  }
   .nav__list {
     font-size: 1rem;
   }
@@ -30,16 +36,13 @@ abbr[title] {
   }
 }
 #hamburgerToggle {
+  font-size: 1.5rem;
   color: $clr-primary;
-  font-size: 1rem;
-  transition: all 150ms;
 }
-// Hero
+//HERO SECTION
 .hero__heading {
-  //valeur précédente pour la taille Desk
   font-size: 2rem;
   font-weight: 600;
-  line-height: 2rem;
 }
 .hero__text {
   font-size: 0.8rem;
@@ -47,16 +50,13 @@ abbr[title] {
 }
 .hero__heading,
 .hero__text {
-  //valeur précédente pour la taille Desk
-  //z-index: 1;
-  //color: $clr-secondary;
   color: $clr-nav-font;
 }
-// Footer
-.footer {
-  font-family: $font-default;
+.cta {
+  color: $clr-secondary;
   font-size: 0.8rem;
 }
+//FOOTER
 .copyrights {
   font-size: 0.6rem;
 }
@@ -82,12 +82,71 @@ abbr[title] {
   text-indent: 1.6rem;
   white-space: nowrap;
 }
+/* RESPONSIVE */
+/* From mobile-l size (425) and more */
+@include breakpoint-up (mobile-l) {
+  //HERO SECION
+  .hero__heading {
+    font-size: 8vw;
+    font-weight: 300;
+  }
+  .hero__text{
+    font-size: 1.2rem;
+  }
+}
+/* From tablet size (640) and more */
+@include breakpoint-up (tablet-s) {
+  //HERO SECION
+  .hero__heading {
+    font-size: 3rem;
+    font-weight: 500;
+  }
+  .hero__text{
+    font-size: 1.2rem;
+  }
+  .cta {
+    font-size: 1rem;
+  }
+}
+/* From laptop size (1024) and more */
+@include breakpoint-up(laptop-s) {
+  //NAVIGATION
+  .nav__item:hover {
+    cursor: pointer;
 
-/* TOOLS */
-// Buttons
-.cta {
-  color: $clr-secondary;
-  //valeur précédente pour la taille Desk
-  //font-size: 1.3rem;
-  font-size: 0.8rem;
+    .nav__link {
+      color: $clr-secondary;
+      text-decoration: underline;
+    }
+  }
+  .nav__link {
+    font-size: 1.3rem;
+    color: $clr-nav-font;
+    text-decoration: none;
+  }
+  //HERO SECTION
+  .hero__heading {
+    font-size: 5rem;
+    font-weight: 700;
+  }
+  
+  .hero__heading,
+  .hero__text {
+    color: $clr-secondary;
+  }
+  .cta {
+    font-size: 1.4rem;
+  }
+  //FOOTER
+  .copyrights {
+    font-size: initial;
+  }
+}
+
+/* From laptop size (1280) and more */
+@include breakpoint-up(laptop-l) {
+  //HERO
+  .hero__text {
+    font-size: 1.4rem;
+  }
 }

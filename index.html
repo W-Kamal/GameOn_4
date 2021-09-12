@@ -23,7 +23,7 @@
         <div class="header__logo">
             <img class="logo__img" alt="GameOn logo" src="./src/img/Logo.png"/>
           </div>        
-        <nav class="main__nav">          
+        <nav id="main__nav">          
           <i class="fas fa-bars" id="hamburgerToggle"></i>
           <ul class="nav__list">
             <li class="nav__item">
@@ -44,7 +44,7 @@
       <main class="hero">
         <section class="hero__section">
             <h1 class="hero__heading">
-              Marathon national<br> de jeux vidéos
+              Marathon national de jeux vidéos
             </h1>
             <p class="hero__text">
               Vous aimez jouer ? Notre prochain évènement gaming est ouvert aux réservations... Places limitées !
@@ -164,14 +164,14 @@
                 <br>
               </div>
             </fieldset>
-            <div class="cta__wrapper">
+            <div class="cta__submit__wrapper">
               <button class="cta submit" id="submitBtn" type="submit" disabled>Valider</button>
             </div>           
           </form>
             <!-- Success message -->
-          <div class="success__wrapper" id="success__wrapper">
+          <div class="success__wrapper hidden" id="success__wrapper">
             <p class="success__msg" id="success__msg"></p>
-            <div class="cta__wrapper">
+            <div class="cta__close__wrapper">
               <button class="cta close-form"> Fermer </button>
             </div>
           </div>  

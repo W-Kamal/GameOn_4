@@ -24,18 +24,9 @@ $breakpoints: (
     laptop-l: 1440px,
     laptop-m: 1280px,
     laptop-s: 1024px,
-    tablet: 768px,
+    tablet-m: 768px,
+    tablet-s: 640px,
     mobile-l: 425px,
     mobile-m: 375px,
     mobile-s: 320px
-);
-$breakpoints-down: (
-    screen-4k: 2559px,
-    laptop-l: 1439px,
-    laptop-m: 1279px,
-    laptop-s: 1023px,
-    tablet: 767px,
-    mobile-l: 424px,
-    mobile-m: 374px,
-    mobile-s: 319px
 );

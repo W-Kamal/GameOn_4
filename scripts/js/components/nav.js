@@ -1,4 +1,4 @@
-const mainNav = document.querySelector('.main__nav');
+const mainNav = document.getElementById('main__nav');
 
 /* Open or close side-nav on smartphone when clicking on hamburger icon */
 const sideToggleBtn = document.getElementById("hamburgerToggle");

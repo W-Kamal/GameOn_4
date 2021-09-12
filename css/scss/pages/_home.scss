@@ -1,7 +1,13 @@
 /* Landing Page */
 .main__container {
-  max-width: 88rem;
-  //valeur précédente pour la taille Desk
-  //padding: 0 2.5rem;  
+  max-width: 40rem; 
+  margin: 0 auto; 
   padding: 0 1.2rem;
+
+  @include breakpoint-up (tablet-m) {
+    padding: 0 2.5rem;
+  }
+  @include breakpoint-up (laptop-s) {
+    max-width: 90rem; //max=1440px
+  }
 }

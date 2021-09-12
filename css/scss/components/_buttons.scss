@@ -26,27 +26,19 @@
 }
 
 .cta {
-  //valeur précédente pour la taille Desk
-  //min-width: 12rem;
   min-width: 9rem;
   background: $clr-primary;
   margin: 0 auto;
-  //padding: .75rem 1.5rem;
   padding: .4rem 1.5rem;
   border: none;
   border-radius: $border-radius;
-  cursor: pointer;
-  //valeur précédente pour la taille Desk
-  // &__wrapper{
-  //   position: absolute;
-  //   top: 33rem;
-  //   left: 5rem;  
-  // }  
+  cursor: pointer;  
+  
   &__wrapper{
     display: flex;
     justify-content: center;
     margin-block: 2rem 1rem;    
-  }  
+  }
 }
 
 //submit/close modal button placement
@@ -55,12 +47,46 @@
   transition: background-color 300ms;
   background: $clr-hover-btn-bg;
 }
+//Submit btn
+.submit{
+  margin: 1.5rem auto 1rem auto;
 
-//Disabled submit button style
-.submit:disabled {
-  //filter: saturate(2.2);
-  border: 1px solid #999999;
-  background-color: #cccccc;
-  color: #666666;
-  transition: all 200ms ease-in-out;
+  //Disabled submit button style
+  &:disabled {
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+    transition: all 200ms ease-in-out;
+  }
+}
+.cta__submit__wrapper,
+.success__wrapper {
+  text-align: center;
+}
+
+/* RESPONSIVE */
+/* From mobile-l size (425) and more */
+@include breakpoint-up(mobile-l) {
+  .cta {
+    min-width: 12rem;
+    padding: .75rem 1.5rem;
+  }
+}
+/* From laptop size (1024) and more */
+@include breakpoint-up(laptop-s) {
+  .cta__wrapper {
+    position: absolute;
+    display: initial;
+    justify-content: initial;
+    margin-block: initial;
+    top: 33rem;
+    left: 3rem;
+  }
+}
+
+/* From laptop size (1280) and more */
+@include breakpoint-up(laptop-m) {
+  .cta__wrapper {
+    left: 5rem;
+  }
 }

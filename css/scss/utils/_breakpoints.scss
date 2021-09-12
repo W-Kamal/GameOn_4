@@ -4,13 +4,13 @@
   }
 }
 @mixin breakpoint-down ($size) {
-  @media screen and (max-width: map-get($breakpoints-down, $size)){
+  @media screen and (max-width: map-get($breakpoints, $size)){
     @content;
   }
 }
 
 @mixin breakpoint-range ($start, $end) {
-  @media screen and (min-width: map-get($breakpoints, $size)) and (max-width: map-get($breakpoints-down, $size)){
+  @media screen and (min-width: map-get($breakpoints, $size)) and (max-width: map-get($breakpoints, $size)){
     @content;
   }
 }

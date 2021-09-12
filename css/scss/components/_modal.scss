@@ -20,9 +20,7 @@
 }
 .modal__view {
   max-width: 32rem;
-  //valeur précédente pour la taille Desk
-  //margin: 3vh auto;
-  margin: 3vh 0;  
+  margin: 8vh auto;  
   background: $clr-primary-bg ;
   border-radius: $border-radius;
   overflow: hidden;
@@ -138,14 +136,18 @@ ul.location-item-list {
 }
 //how success look
 .success__wrapper {
+  display: none;
+}
+.success__wrapper {
   display: block;
+  height: auto;
   padding : 0.83rem 8%;
 }
 .success__msg {
   margin-bottom: 1rem;
 }
 .hidden {
-  height: 20vh;
+  height: 100%;
   display: none;
 }
 .visuallyhidden {
