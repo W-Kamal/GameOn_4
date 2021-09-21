@@ -20,13 +20,13 @@ $border-radius : 0.5rem;
 
 /* BREAKPOINTS */
 $breakpoints: (
-    screen-4k: 2560px,
+    //screen-4k: 2560px,
     laptop-l: 1440px,
     laptop-m: 1280px,
     laptop-s: 1024px,
     tablet-m: 768px,
     tablet-s: 640px,
-    mobile-l: 425px,
-    mobile-m: 375px,
-    mobile-s: 320px
+    mobile-l: 425px
+    // mobile-m: 375px,
+    // mobile-s: 320px
 );

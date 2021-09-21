@@ -104,7 +104,11 @@ const tournamentValidation = (inputField, errorField) => {
   if (!nbtournament || Number(nbtournament) < 0 || Number(nbtournament) > 100) {
     setErrorStatus (inputField, errorField, errorMsgList.tournament);
     fieldValidStatus.tournamentIsValid = false;
-  } else {
+  } else if (nbtournament % 1 > 0) { //Control if the input is a non decimal number
+    setErrorStatus (inputField, errorField, errorMsgList.tournament);
+    fieldValidStatus.tournamentIsValid = false;
+  } 
+  else {
     setValidStatus (inputField, errorField);
     fieldValidStatus.tournamentIsValid = true;
   }
