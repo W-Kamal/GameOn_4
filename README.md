@@ -38,4 +38,5 @@ If I had to push further this project, I would work on :
 1. Build the backend part.
 2. Set up of the API call features.
 3. Handle form data sent.
+4. Fix UI issues (e.g. scroll bar)
 ---
